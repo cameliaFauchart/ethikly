@@ -10,10 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_30_145118) do
+ActiveRecord::Schema.define(version: 2021_11_30_152737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.string "city"
+    t.integer "eco_scoring"
+    t.integer "social_scoring"
+    t.integer "environmental_scoring"
+    t.string "address"
+    t.integer "longitude"
+    t.integer "latitude"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "offers", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "income"
+    t.string "contract"
+    t.bigint "company_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_offers_on_company_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +51,16 @@ ActiveRecord::Schema.define(version: 2021_11_30_145118) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "wishlists", force: :cascade do |t|
+    t.bigint "offer_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["offer_id"], name: "index_wishlists_on_offer_id"
+    t.index ["user_id"], name: "index_wishlists_on_user_id"
+  end
+
+  add_foreign_key "offers", "companies"
+  add_foreign_key "wishlists", "offers"
+  add_foreign_key "wishlists", "users"
 end
