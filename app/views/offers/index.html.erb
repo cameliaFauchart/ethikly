@@ -2,8 +2,11 @@
   <h1>All The offers</h1>
   <p>
     <% @offers.each do |offer| %>
+      <tr>
+        <td><%=offer.name%></td>
+        <td><%=offer.company.name%></td>
+        <td><%=offer.company.address%></td>
+      </tr>
+    <% end %>
  </p>
-
-
-
 </body>
