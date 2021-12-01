@@ -1,22 +1,22 @@
 class WishlistsController < ApplicationController
 
   def create
-    @wishlist = Offer.find(params[:offer_id])
-    @wishlist = Wishlist.new(wishlist_params)
+    @offer = Offer.find(params[:offer_id])
+    @wishlist = Wishlist.new()
     @wishlist.offer = @offer
     @wishlist.user = current_user
-    if @wishlist.save
+    if @wishlist.save!
+      redirect_to wishlists_path
+    end
 
   end
 
   def destroy
-
+    @wishlist = Wishlist.find(params[:id])
+    @wishlist.destroy
   end
-
-  private
-
-  def wishlist_params
-    params.require(:wishlist).permit(:destroy)
+  def index
+    @wishlists = Wishlist.all
   end
 
 end
