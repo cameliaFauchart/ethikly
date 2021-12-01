@@ -31,7 +31,7 @@ p company5
 puts "Companies creation finished!"
 
 puts "Creating offers..."
-offer1 = Offer.create!(name: "Community Manager", description: "Sous la responsabilité du Directeur Marketing, vous
+offer1 = Offer.new(name: "Community Manager", description: "Sous la responsabilité du Directeur Marketing, vous
                        serez en charge de l'animation des réseaux sociaux et du pilotage des campagnes de
                        sponsorisation, au service de la valorisation des contenus et des comptes de nos clients.
                        Compétences requises :
@@ -44,7 +44,7 @@ offer1 = Offer.create!(name: "Community Manager", description: "Sous la responsa
                        * Capacité à définir et animer une stratégie digitale ;
                        * Expérience en gestion de campagnes emarketing - la maîtrise du Business Manager Facebook est
                        indispensable", income: 30_000, contract: "CDD")
-offer2 = Offer.create!(name: "Community Manager", description: "Sous la responsabilité du Directeur Marketing, vous
+offer2 = Offer.new(name: "Community Manager", description: "Sous la responsabilité du Directeur Marketing, vous
                        serez en charge de l'animation des réseaux sociaux et du pilotage des campagnes de
                        sponsorisation, au service de la valorisation des contenus et des comptes de nos clients.
                        Compétences requises :
@@ -57,7 +57,7 @@ offer2 = Offer.create!(name: "Community Manager", description: "Sous la responsa
                        * Capacité à définir et animer une stratégie digitale ;
                        * Expérience en gestion de campagnes emarketing - la maîtrise du Business Manager Facebook est
                        indispensable", income: 32_000, contract: "CDI")
-offer3 = Offer.create!(name: "Développeur Full Stack Ruby", description: "Dans le cadre d'un accroissement d'activité,
+offer3 = Offer.new(name: "Développeur Full Stack Ruby", description: "Dans le cadre d'un accroissement d'activité,
                        vous rejoignez une équipe de 4-5 Développeurs (tous niveaux), pour travailler ensemble sur la
                        conception et/ou le développement de projets (sites vitrine, site web,...) pour les clients de
                        l'entreprise.
@@ -70,7 +70,7 @@ offer3 = Offer.create!(name: "Développeur Full Stack Ruby", description: "Dans 
                        documenter les projets.
                        Au sein d'une équipe dynamique et conviviale, vous pouvez être amené à faire un petit café / du
                        thé pour travailler dans la bonne humeur !", income: 37_000, contract: "CDD")
-offer4 = Offer.create!(name: "Développeur Full Stack", description: "Dans le cadre d'un accroissement d'activité,
+offer4 = Offer.new(name: "Développeur Full Stack", description: "Dans le cadre d'un accroissement d'activité,
                        vous rejoignez une équipe de 4-5 Développeurs (tous niveaux), pour travailler ensemble sur la
                        conception et/ou le développement de projets (sites vitrine, site web,...) pour les clients de
                        l'entreprise.
@@ -83,7 +83,7 @@ offer4 = Offer.create!(name: "Développeur Full Stack", description: "Dans le ca
                        documenter les projets.
                        Au sein d'une équipe dynamique et conviviale, vous pouvez être amené à faire un petit café / du
                        thé pour travailler dans la bonne humeur !", income: 29_000, contract: "Freelance")
-offer5 = Offer.create!(name: "Développeur Back end", description: "Dans le cadre d'un accroissement d'activité,
+offer5 = Offer.new(name: "Développeur Back end", description: "Dans le cadre d'un accroissement d'activité,
                        vous rejoignez une équipe de 4-5 Développeurs (tous niveaux), pour travailler ensemble sur la
                        conception et/ou le développement de projets (sites vitrine, site web,...) pour les clients de
                        l'entreprise.
@@ -97,10 +97,24 @@ offer5 = Offer.create!(name: "Développeur Back end", description: "Dans le cadr
                        Au sein d'une équipe dynamique et conviviale, vous pouvez être amené à faire un petit café / du
                        thé pour travailler dans la bonne humeur !", income: 28_500, contract: "Apprentissage")
 
+offer1.company = company1
+offer1.save!
 p offer1
+
+offer2.company = company2
+offer2.save!
 p offer2
+
+offer3.company = company3
+offer3.save!
 p offer3
+
+offer4.company = company4
+offer4.save!
 p offer4
+
+offer5.company = company5
+offer5.save!
 p offer5
 puts "Offers creation finished!"
 
