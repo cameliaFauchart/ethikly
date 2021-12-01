@@ -9,6 +9,9 @@
             <td><%=offer.name%></td>
             <td><%=offer.company.name%></td>
             <td><%=offer.company.city%></td>
+            <td><%=offer.company.eco_scoring%></td>
+
+
             <%= link_to "En savoir plus", offer_path(offer), class: "btn btn-primary" %>
           </tr>
         </div>
@@ -16,6 +19,8 @@
     </div>
   <% end %>
 </div>
+<%= average = [offer.company.eco_scoring, offer.company.social_scoring, offer.environmental_scoring] %>
+
 
 <%# cards
 each
