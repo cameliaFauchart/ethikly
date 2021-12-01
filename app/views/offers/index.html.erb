@@ -1,12 +1,26 @@
-<body>
-  <h1>All The offers</h1>
-  <p>
-    <% @offers.each do |offer| %>
-      <tr>
-        <td><%=offer.name%></td>
-        <td><%=offer.company.name%></td>
-        <td><%=offer.company.address%></td>
-      </tr>
-    <% end %>
- </p>
-</body>
+<div class="container">
+  <h2>All The offers</h2>
+  <% @offers.each do |offer| %>
+    <div class="card-index">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-index-infos">
+        <div>
+          <tr>
+            <td><%=offer.name%></td>
+            <td><%=offer.company.name%></td>
+            <td><%=offer.company.city%></td>
+            <%= link_to "En savoir plus", offer_path(offer), class: "btn btn-primary" %>
+          </tr>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%# cards
+each
+card
+contenu
+fermeture card
+          each
+          cards %>
