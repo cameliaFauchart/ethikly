@@ -4,7 +4,7 @@ class OffersController < ApplicationController
   end
 
   def show
-    @offer = Offer.find[params:id]
+    @offer = Offer.find(params[:id])
     @wishlist = Wishlist.new
   end
 end
