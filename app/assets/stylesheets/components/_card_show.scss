@@ -8,4 +8,10 @@
   padding: 8px;
   margin: auto;
   margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.coeur-fav {
+ align-self: flex-end;
 }
