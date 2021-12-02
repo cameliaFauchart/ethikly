@@ -2,8 +2,8 @@
 
   <div class= "card-show">
     <p><%= @offer.name %></p>
-    <p class="card-fav"> <%= link_to "FAV", offer_wishlists_path(@offer), method: :create, data:{confirm: "Vraiment ?"} %></p>
-    <p>// Company name //</p>
+    <p class="card-fav"> <%= link_to "FAV", offer_wishlists_path(@offer), method: :create %></p>
+    <p><%= @offer.company.name %></p>
     <p><%= @offer.contract %></p>
     <p><%= @offer.income %></p>
     <p><%= @offer.description %></p>
