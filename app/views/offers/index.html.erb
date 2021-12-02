@@ -2,24 +2,30 @@
   <h2>All The offers</h2>
   <% @offers.each do |offer| %>
     <div class="card-index">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <img src="https://image.shutterstock.com/image-vector/isometric-online-job-search-human-600w-1272747259.jpg" />
       <div class="card-index-infos">
         <div>
-          <tr>
-            <td><%=offer.name%></td>
-            <td><%=offer.company.name%></td>
-            <td><%=offer.company.city%></td>
-            <td><%=offer.company.eco_scoring%></td>
+          <ul>
+            <li><%=offer.name%></li>
+            <li><%=offer.company.name%></li>
+            <li><%=offer.company.city%></li>
+            <% average = [offer.company.eco_scoring, offer.company.social_scoring, offer.company.environmental_scoring] %>
+            <%= average.sum/average.size %> /100
 
 
-            <%= link_to "En savoir plus", offer_path(offer), class: "btn btn-primary" %>
-          </tr>
+
+
+            <%= link_to "En savoir plus", offer_path(offer), class: "btn-toward-show" %>
+          </ul>
         </div>
       </div>
     </div>
+
+
   <% end %>
+
 </div>
-<%= average = [offer.company.eco_scoring, offer.company.social_scoring, offer.environmental_scoring] %>
+
 
 
 <%# cards
