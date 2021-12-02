@@ -1,1 +1,16 @@
-test
+<div class="container">
+  <div class="myprofile">
+    <h2>Mon profil</h2>
+      <div class="card-profile">
+        <p><%= current_user.first_name %></p>
+        <p><%= current_user.last_name %></p>
+        <p><%= current_user.email %></p>
+      </div>
+  </div>
+  <div class="mywishlist">
+    <h2>Ma liste d'offres favorites</h2>
+      <div class="card-wishlist">
+        <p><%#= @wishlist.offer_id %></p>
+      </div>
+  </div>
+</div>
