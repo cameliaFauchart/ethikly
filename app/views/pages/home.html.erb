@@ -1,30 +1,40 @@
 <div class="banner-homepage">
-  <div class= "container-homepage align-self-center ">
+  <div class= "container-homepage ">
   <h5>Donnez du sens à votre vie!  Choisissez un travail éthique!</h5>
+      <div class= "form-align-u">
+        <div class="label-align">
+          <%= form_tag offers_path, method: :get do %>
+          <%= label_tag(:query,"Localisation du poste", class: "label-color") %>
+          <%= text_field_tag :ou,
+          params[:query],
+          class: "form-control",
+          placeholder: "Où?"
+          %>
+        </div>
 
-      <%= form_tag offers_path, method: :get do %>
-        <%= label_tag(:query,"Localisation du poste", class: "label-color") %>
-        <%= text_field_tag :ou,
-        params[:query],
-        class: "form-control",
-        placeholder: "Où?"
-      %>
-    
-        <%= label_tag(:query,"Le job de vos rêves",class: "label-color") %>
-        <%= text_field_tag :quoi,
-        params[:query],
-        class: "form-control",
-        placeholder: "Quoi?"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-      <% end %>
+        <div class="label-align">
+          <%= label_tag(:query,"Le job de vos rêves",class: "label-color") %>
+          <%= text_field_tag :quoi,
+          params[:query],
+          class: "form-control",
+          placeholder: "Quoi?"
+          %>
+        </div>
 
-     <%= link_to "#environnemental", offers_path, class: "hashtags" %>
-     <%= link_to "#economique", offers_path, class: "hashtags" %>
-     <%= link_to "#social", offers_path, class: "hashtags" %>
-     <%= link_to "#viable", offers_path, class: "hashtags" %>
-     <%= link_to "#vivable", offers_path, class: "hashtags" %>
-     <%= link_to "#equitable", offers_path, class: "hashtags" %>
+       <div class ="buttonGO">
+         <%= submit_tag "Go👌", class: "buttonGo" %>
+         <% end %>
+       </div>
+      </div>
+      
+       <div class ="hashtag-container">
+          <%= link_to "#environnemental", offers_path, class: "hashtags" %>
+          <%= link_to "#economique", offers_path, class: "hashtags" %>
+          <%= link_to "#social", offers_path, class: "hashtags" %>
+          <%= link_to "#viable", offers_path, class: "hashtags" %>
+          <%= link_to "#vivable", offers_path, class: "hashtags" %>
+          <%= link_to "#equitable", offers_path, class: "hashtags" %>
+       </div>
 
   </div>
 </div>
