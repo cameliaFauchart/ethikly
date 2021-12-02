@@ -3,8 +3,8 @@
   <div class= "card-show">
     <p><%= @offer.name %></p>
 
-        <!-- Si l'offre n'est pas dans wishlist, l'ID est NIL
-             dans ce cas, créer une wishlist (coeur blanc)
+        <!-- Si l'offre de l'utilisateur appartient déjà à une liste
+              crée une wishlist (coeur blanc)
              Autrement, l'offre est déjà présente dans la wishlist
              et il faut donc le supprimer (coeur rose) -->
 
@@ -17,8 +17,6 @@
                   <%= image_tag "coeur_blanc.png", alt: "coeur blanc" %>
                <% end %>
             <% end %>
-
-
 
     <p><%= @offer.company.name %></p>
     <p><%= @offer.contract %></p>

@@ -17,7 +17,7 @@ class User < ApplicationRecord
   end
 
   def get_wishlist(offer)
-    Wishlist.find_by(user: self, offer: offer) #wishlist qui correspont à cet user et à cette offre
+    Wishlist.find_by(user: self, offer: offer) #wishlist qui correspond à cet user précis et à cette offre précise
   end
 
 end
