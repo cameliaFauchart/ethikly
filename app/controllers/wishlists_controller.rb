@@ -8,7 +8,7 @@ class WishlistsController < ApplicationController
     @wishlist = Wishlist.new()
     @wishlist.offer = @offer
     @wishlist.user = current_user
-    if @wishlist.save!
+    if @wishlist.save
       redirect_to wishlists_path
     end
   end
