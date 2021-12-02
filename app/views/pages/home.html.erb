@@ -1,22 +1,23 @@
 <div class="banner">
   <div class= "container align-self-center ">
   <h5>Donnez du sens à votre vie!  Choisissez un travail éthique!</h5>
-  
-    <form class="d-flex">
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputou"class="localisation">Localisation du poste</label>
-          <input type="texte" class="form-control" id="inputou" placeholder="Où?">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="inputquoi" class="localisation">Le job de vos rêves</label>
-          <input type="texte" class="form-control" id="inputquoi" placeholder="Quoi?">
-          
-        </div>
-        <%= link_to "👌Go", offers_path, class: "btn-nav-bar" %>
-        <%# <a class="btn-nav-bar" href="#">👌Go </a> %>
-      </div>
-    </form>
+      <%= form_tag offers_path, method: :get do %>
+        <%= label_tag(:query,"Localisation du poste", class: "label-color") %>
+        <%= text_field_tag :ou,
+        params[:query],
+        class: "form-control",
+        placeholder: "Où?"
+      %>
+    
+        <%= label_tag(:query,"Le job de vos rêves",class: "label-color") %>
+        <%= text_field_tag :quoi,
+        params[:query],
+        class: "form-control",
+        placeholder: "Quoi?"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+
      <%= link_to "#environnemental", offers_path, class: "hashtags" %>
      <%= link_to "#economique", offers_path, class: "hashtags" %>
      <%= link_to "#social", offers_path, class: "hashtags" %>
