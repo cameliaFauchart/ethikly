@@ -1,5 +1,5 @@
 class WishlistsController < ApplicationController
-
+ 
   def create
     @offer = Offer.find(params[:offer_id])
     @wishlist = Wishlist.new() # ()?
@@ -8,7 +8,6 @@ class WishlistsController < ApplicationController
     if @wishlist.save
       redirect_to request.referer
     end
-
   end
 
   def destroy
@@ -20,5 +19,4 @@ class WishlistsController < ApplicationController
   def index
     @wishlists = Wishlist.all
   end
-
 end
