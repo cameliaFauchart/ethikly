@@ -1,0 +1,5 @@
+<%= form_tag offers_path, method: :get do |f| %>
+  <%= select_tag "search[income]", options_for_select(["", 30000, 35000]) %>
+  <%= select_tag "search[city]", options_for_select(["", "Lille", "Roubaix"]) %>
+  <%= submit_tag %>
+<% end %>
