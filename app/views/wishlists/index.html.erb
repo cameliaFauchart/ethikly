@@ -1,14 +1,20 @@
 <div class="container">
   <div class="myprofile">
-    <h2>Mon profil</h2>
-      <div class="card-profile">
-        <p><%= current_user.first_name %></p>
-        <p><%= current_user.last_name %></p>
-        <p><%= current_user.email %></p>
+    <img class="avatar-profile" src="https://kitt.lewagon.com/placeholder/users/ssaunier"/>
+      <div class="title-profile"><h2>Mes coordonnées</h2></div>
+      <div class="row">
+        <div class="card-profile-left col-12 col-lg-6">
+          <p><%= current_user.first_name %></p>
+          <p><%= current_user.last_name %></p>
+          <p><%= current_user.email %></p>
+        </div>
+        <div class="card-profile-right col-12 col-lg-6">
+          <img class="pdf-profile" src="https://cdn-images.zety.fr/images/zety/landings/templates/fr/modele-cv-muse@3x.png"/>
+        </div>
       </div>
   </div>
   <div class="mywishlist">
-    <h2>Ma liste d'offres favorites</h2>
+    <div class="title-profile"><h2>Mes offres favorites</h2></div>
       <div class="card-wishlist">
         <p><%#= @wishlist.offer_id %></p>
       </div>
