@@ -5,7 +5,7 @@
               crée une wishlist (coeur blanc)
              Autrement, l'offre est déjà présente dans la wishlist
              et il faut donc le supprimer (coeur rose) -->
-          <div class="coeur-fav">
+          <div class="coeur-fav-profil">
              <% if current_user.already_in_list?(@offer) %>
               <%= link_to wishlist_path(current_user.get_wishlist(@offer)), method: :delete, remote: true do %>
                   <%= image_tag "coeur_fav.png", alt: "coeur rose" %>
