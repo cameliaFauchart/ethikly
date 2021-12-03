@@ -8,8 +8,8 @@ class OffersController < ApplicationController
       @offers = []
       @selected_offers = Offer.where("income > :value", value: params[:search][:income])
       @selected_offers.each do |offer|
-        company = Company.find(offer.company_id)
-        if company.city == params[:search][:city]
+        job = Offer.find(offer.id).contract
+        if job == params[:search][:contract]
           @offers << offer
         end
       end
