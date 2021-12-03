@@ -14,15 +14,15 @@ User.destroy_all
 
 
 puts "Creating companies..."
-company1 = Company.create!(name: "OVH", city: "59100 Roubaix", address: "2 Rue Kellermann", eco_scoring: 56,
+company1 = Company.create!(name: "OVH", city: "Roubaix", address: "2 Rue Kellermann", eco_scoring: 56,
                            social_scoring: 66, environmental_scoring: 76)
-company2 = Company.create!(name: "Le Wagon", city: "59160 Lille", address: "2 Av. des Saules", eco_scoring: 76,
+company2 = Company.create!(name: "Le Wagon", city: "Lille", address: "2 Av. des Saules", eco_scoring: 76,
                            social_scoring: 78, environmental_scoring: 88)
-company3 = Company.create!(name: "Leroy Merlin", city: "59260 Lezennes", address: "Rue Chanzy", eco_scoring: 55,
+company3 = Company.create!(name: "Leroy Merlin", city: "Lezennes", address: "Rue Chanzy", eco_scoring: 55,
                            social_scoring: 69, environmental_scoring: 64)
-company4 = Company.create!(name: "Decathlon", city: "59650 Villeneuve-d'Ascq", address: "121 Bd de Valmy", eco_scoring: 90,
+company4 = Company.create!(name: "Decathlon", city: "Villeneuve-d'Ascq", address: "121 Bd de Valmy", eco_scoring: 90,
                            social_scoring: 76, environmental_scoring: 88)
-company5 = Company.create!(name: "M6 Web", city: "59110 La Madeleine", address: "125 Av de la République ", eco_scoring: 77,
+company5 = Company.create!(name: "M6 Web", city: "La Madeleine", address: "125 Av de la République ", eco_scoring: 77,
                            social_scoring: 83, environmental_scoring: 49)
 
 p company1
