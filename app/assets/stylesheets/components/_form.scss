@@ -1,12 +1,21 @@
-.form-group .col-md-6 {
+.form-control {
   color: white;
+  border-radius: 15px;
   }
-.localisation {
+
+.label-color {
   color:white;
 }
-.form-control{
-  border-radius: 15px;
+.form-align-u {
+  display: flex;
+  align-items:flex-end;
+  justify-content: space-between;
+
 }
-.form-row {
-  width: 600px;
+
+.label-align {
+//   padding-left:10px;
+//   padding-right:10px;
+//   padding-bottom:20px;
+// }
 }

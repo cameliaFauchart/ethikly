@@ -1,6 +1,7 @@
 class OffersController < ApplicationController
   def index
 
+
     if params[:search].present? && !(params[:search].each_value.all? &:empty?)
 
       @offers = Offer.where("income > :value", value: params[:search][:income])
@@ -8,6 +9,7 @@ class OffersController < ApplicationController
 
     else
       @offers = Offer.includes(:company)
+
     end
   end
 
