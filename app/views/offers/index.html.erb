@@ -37,16 +37,16 @@
             <ul>
               <li class="card-offer-name"><%=offer.name%></li>
               <li class="card-company-name"><%=offer.company.name%></li>
-              <li><%=offer.company.city%></li>
               <% average = [offer.company.eco_scoring, offer.company.social_scoring, offer.company.environmental_scoring] %>
               <%= average.sum/average.size %> /100
+              <li><%=offer.company.city%></li>
 
-
-
+              <%= image_tag "genres.png", alt: "logo féminin masculin non-binaire" %>
+              <%= image_tag "PMR.png", alt: "logo PMR" %>
 
               <%= link_to "En savoir plus", offer_path(offer), class: "btn-toward-show" %>
             </ul>
-            <!--<p><%= offer.company.created_at %></p>-->
+            <p>Ajoutée le : <%= offer.company.created_at %></p>
         </div>
       </div>
     </div>

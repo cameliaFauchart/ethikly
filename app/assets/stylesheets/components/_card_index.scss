@@ -63,10 +63,13 @@ font-family: Arial, Helvetica, sans-serif;
 }
 
  .btn-toward-show {
-    background-color: purple;
+    background-color: rgba(99, 79, 161, 1);
     color: white;
-    padding: 10px;
+    padding: 8px;
+    padding-right: 15px;
+    padding-left: 15px;
     border-radius: 4px;
     position: absolute;
     right: 10px;
+    border-radius: 10px;
 }
