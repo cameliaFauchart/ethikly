@@ -1,7 +1,8 @@
 <div class="banner-homepage">
-  <div class= "container-homepage ">
   <h5>Donnez du sens à votre vie!  Choisissez un travail éthique!</h5>
+    <div class="container-index-search">
       <div class= "form-align-u">
+        
         <div class="label-align">
           <%= form_tag offers_path, method: :get do %>
           <%= label_tag(:query,"Localisation du poste", class: "label-color") %>
@@ -21,10 +22,11 @@
           %>
         </div>
 
-       <div class ="buttonGO">
-         <%= submit_tag "Go👌", class: "buttonGo" %>
-         <% end %>
-       </div>
+        <div class ="buttonGO">
+          <%= submit_tag "Go👌", class: "buttonGo" %>
+          <% end %>
+        </div>
+      
       </div>
 
        <div class ="hashtag-container">
