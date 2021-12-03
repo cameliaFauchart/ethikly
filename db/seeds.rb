@@ -7,9 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Cleaning database..."
-Company.destroy_all
+Wishlist.destroy_all
 Offer.destroy_all
+Company.destroy_all
 User.destroy_all
+
 
 puts "Creating companies..."
 company1 = Company.create!(name: "OVH", city: "59100 Roubaix", address: "2 Rue Kellermann", eco_scoring: 56,
