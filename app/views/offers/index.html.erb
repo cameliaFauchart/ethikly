@@ -32,23 +32,42 @@
   <h2>All The offers</h2>
   <% @offers.each do |offer| %>
     <div class="card-index">
-      <img src="https://image.shutterstock.com/image-vector/isometric-online-job-search-human-600w-1272747259.jpg" />
-      <div class="card-index-infos">
-        <div>
-          <ul>
-            <li><%=offer.name%></li>
-            <li><%=offer.company.name%></li>
-            <li><%=offer.company.city%></li>
-            <% average = [offer.company.eco_scoring, offer.company.social_scoring, offer.company.environmental_scoring] %>
-            <%= average.sum/average.size %> /100
+       <div class="card-index-infos">
+         <div>
+           <% if current_user %>
+              <div class="coeur-fav">
+              <% if current_user.already_in_list?(offer) %>
+                <%= link_to wishlist_path(current_user.get_wishlist(offer)), method: :delete, remote: true do %>
+                    <%= image_tag "coeur_fav.png", alt: "coeur rose" %>
+                <% end %>
 
+              <% else %>
+                <%= link_to offer_wishlists_path(offer), method: :post, remote: true do %>
+                    <%= image_tag "coeur_blanc.png", alt: "coeur blanc" %>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
 
+            <ul>
+              <li class="card-offer-name"><%=offer.name%></li>
+              <li class="card-company-name"><%=offer.company.name%></li>
+                <div class="score">
+              <% average = [offer.company.eco_scoring, offer.company.social_scoring, offer.company.environmental_scoring] %>
+              <%= average.sum/average.size %> /100
+              <li class="card-company-city"><%=offer.company.city%></li>
+                </div>
 
+              <%= image_tag "genres.png", alt: "logo féminin masculin non-binaire" %>
+              <%= image_tag "PMR.png", alt: "logo PMR" %>
 
-            <%= link_to "En savoir plus", offer_path(offer), class: "btn-toward-show" %>
-          </ul>
+              <%= link_to "En savoir plus", offer_path(offer), class: "btn-toward-show" %>
+            </ul>
+
         </div>
+
       </div>
+      <p class="card-info-date">Ajoutée le : <%= offer.company.created_at %></p>
     </div>
 
 
