@@ -1,5 +1,6 @@
 class WishlistsController < ApplicationController
- 
+  before_action :authenticate_user!
+
   def create
     @offer = Offer.find(params[:offer_id])
     @wishlist = Wishlist.new() # ()?
