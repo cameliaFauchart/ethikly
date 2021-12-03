@@ -19,5 +19,6 @@ class WishlistsController < ApplicationController
 
   def index
     @wishlists = Wishlist.all
+    # @wishlists = Wishlist.where(user_id: current_user)
   end
 end

@@ -17,8 +17,26 @@
   <div class="mywishlist">
     <div class="title-profile"><h2>Mes offres favorites</h2></div>
       <div class="card-wishlist">
-        <p><%#= @wishlist.offer_id %></p>
+        <%@wishlists.each do |wishlist|%>
+          <div class="card-index">
+            <img src="https://image.shutterstock.com/image-vector/isometric-online-job-search-human-600w-1272747259.jpg" />
+            <div class="card-index-infos">
+              <div>
+                <ul>
+                  <li><%=wishlist.offer.name%></li>
+                  <li><%#=wishlist.offer.company.name%></li>
+                  <li><%#=wishlist.offer.company.city%></li>
+                  <% #average = [wishlist.offer.company.eco_scoring, wishlist.offer.company.social_scoring, wishlist.company.environmental_scoring] %>
+                  <%= #average.sum/average.size %> /100
+
+
+
+
+                  <%= link_to "En savoir plus", offer_path(offer), class: "btn-toward-show" %>
+                </ul>
+              </div>
+            </div>
+          </div>
       </div>
   </div>
 </div>
-
