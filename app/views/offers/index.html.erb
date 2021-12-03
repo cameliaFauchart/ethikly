@@ -2,12 +2,11 @@
   <h2>All The offers</h2>
   <% @offers.each do |offer| %>
     <div class="card-index">
-      <img src="https://image.shutterstock.com/image-vector/isometric-online-job-search-human-600w-1272747259.jpg" />
       <div class="card-index-infos">
         <div>
           <ul>
-            <li><%=offer.name%></li>
-            <li><%=offer.company.name%></li>
+            <li class="card-offer-name"><%=offer.name%></li>
+            <li class="card-company-name"><%=offer.company.name%></li>
             <li><%=offer.company.city%></li>
             <% average = [offer.company.eco_scoring, offer.company.social_scoring, offer.company.environmental_scoring] %>
             <%= average.sum/average.size %> /100
