@@ -1,8 +1,10 @@
 class OffersController < ApplicationController
+  before_action :authenticate_user!, only: [:show]
+
   def index
     if params[:ou].present? || params[:quoi].present?
       sql_query = "offers.name ILIKE :quoi AND companies.city ILIKE :ou"
-      @offers = Offer.joins(:company).where(sql_query, ou: "%#{params[:ou]}%",quoi: "%#{params[:quoi]}%")   
+      @offers = Offer.joins(:company).where(sql_query, ou: "%#{params[:ou]}%",quoi: "%#{params[:quoi]}%")
     else
     @offers = Offer.all
     end
