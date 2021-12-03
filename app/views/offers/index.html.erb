@@ -55,7 +55,7 @@
                 <div class="score">
               <% average = [offer.company.eco_scoring, offer.company.social_scoring, offer.company.environmental_scoring] %>
               <%= average.sum/average.size %> /100
-              <li><%=offer.company.city%></li>
+              <li class="card-company-city"><%=offer.company.city%></li>
                 </div>
 
               <%= image_tag "genres.png", alt: "logo féminin masculin non-binaire" %>
@@ -63,9 +63,11 @@
 
               <%= link_to "En savoir plus", offer_path(offer), class: "btn-toward-show" %>
             </ul>
-            <p class="card-info-date">Ajoutée le : <%= offer.company.created_at %></p>
+
         </div>
+
       </div>
+      <p class="card-info-date">Ajoutée le : <%= offer.company.created_at %></p>
     </div>
 
 
