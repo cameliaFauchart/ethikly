@@ -4,6 +4,36 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   height: 239px;
   width: 417px;
+  border-radius: 8px;
+  margin: 2em;
+}
+
+.coeur-fav {
+  position: absolute;
+  right: 20px;
+}
+
+.card-index ul {
+  list-style-type: none;
+}
+
+.card-offer-name {
+  font-weight: bold;
+}
+
+.card-company-name {
+font-style: italic;
+font-weight: bold;
+color: #634FA1;
+font-size: 15px;
+font-family: Arial, Helvetica, sans-serif;
+padding-top: 5px;
+padding-bottom: 5px;
+}
+
+.card-company-city {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .card-index > img {
@@ -39,16 +69,45 @@
   top: -20px;
   width: 40px;
 }
+
 .card-index-infos {
   display: flex;
   position: relative;
 }
 
+.score {
+  padding-bottom: 8px;
+
+}
+
  .btn-toward-show {
-    background-color: purple;
+    background-color: rgba(99, 79, 161, 1);
     color: white;
-    padding: 10px;
+    padding: 8px;
+    padding-right: 15px;
+    padding-left: 15px;
     border-radius: 4px;
     position: absolute;
-    right: 10px;
+    right: 25px;
+    bottom:-15px;
+    border-radius: 10px;
+}
+
+.btn-toward-show:hover {
+font-size: 1rem;
+text-align: center;
+color: #fff;
+text-shadow:
+0 0 7px #fff,
+0 0 10px #fff,
+0 0 42px rgb(230, 18, 124),
+0 0 77px rgb(230, 18, 124),
+0 0 100px rgb(230, 18, 124);
+animation: lumiere 1s infinite linear;
+border-radius: 10px;
+}
+
+.card-info-date {
+  padding-top: 15px;
+  padding-left: 10px;
 }
