@@ -1,7 +1,7 @@
 
 <div class="container">
   <div class="myprofile">
-    <img class="avatar-profile" src="https://kitt.lewagon.com/placeholder/users/ssaunier"/>
+    <img class="avatar-profile" src="https://pyxis.nymag.com/v1/imgs/f6a/ac1/4f3e0d5bbb8ea02ce335cef6ac8c5be584-jeff-bezos.rsquare.w1200.jpg"/>
       <div class="title-profile"><h2>Mes coordonnées</h2></div>
       <div class="row">
         <div class="card-profile-left col-12 col-lg-6">
@@ -19,17 +19,14 @@
       <div class="card-wishlist">
         <%@wishlists.each do |wishlist|%>
           <div class="card-index">
-            <img src="https://image.shutterstock.com/image-vector/isometric-online-job-search-human-600w-1272747259.jpg" />
             <div class="card-index-infos">
               <div>
                 <ul>
                   <li><%=wishlist.offer.name%></li>
-                  <li><%#=wishlist.offer.company.name%></li>
-                  <li><%#=wishlist.offer.company.city%></li>
-                  <% #average = [wishlist.offer.company.eco_scoring, wishlist.offer.company.social_scoring, wishlist.company.environmental_scoring] %>
-                  <%= #average.sum/average.size %> /100
-
-
+                  <li><%=wishlist.offer.company.name%></li>
+                  <li><%=wishlist.offer.company.city%></li>
+                  <%#average = [wishlist.offer.company.eco_scoring, wishlist.offer.company.social_scoring, wishlist.company.environmental_scoring] %>
+                  <%#=average.sum/average.size%> /100
 
 
                   <%= link_to "En savoir plus", offer_path(offer), class: "btn-toward-show" %>
@@ -37,6 +34,7 @@
               </div>
             </div>
           </div>
+        <%end%>
       </div>
   </div>
 </div>
