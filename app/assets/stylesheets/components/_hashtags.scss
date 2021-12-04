@@ -11,3 +11,46 @@ a:hover {
   text-align: center;
   padding-top: 40px;
 }
+
+ul.cloud {
+    list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  line-height: 2.5rem;
+}
+
+ul.cloud-list {
+color: #F2C00C;
+  display: block;
+  font-size: 1.5rem;
+  padding: 0.125rem 0.25rem;
+  text-decoration: none;
+  position: relative;
+}
+
+#environnemental {
+  font-size: 25px;
+}
+
+#economique {
+  font-size: 10px;
+}
+
+#social {
+  font-size: 30;
+}
+
+#viable {
+  font-size: 20px;
+}
+
+#ecolo {
+  font-size: 35px;
+}
+
+#equitable {
+  font-size: 40px;
+}
