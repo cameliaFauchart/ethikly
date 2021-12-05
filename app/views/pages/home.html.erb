@@ -25,14 +25,17 @@
       </div>
     </div>
     <div class ="hashtag-container">
-    <ul class ="cloud">
-      <li class ="cloud-list"><%= link_to "#environnemental", offers_path, class: "hashtags", id:"environnemental" %></li>
-      <li class ="cloud-list"><%= link_to "#economique", offers_path, class: "hashtags", id:"economique" %></li>
-      <li class ="cloud-list"><%= link_to "#social", offers_path, class: "hashtags", id:"social" %></li>
-      <li class ="cloud-list"><%= link_to "#viable", offers_path, class: "hashtags", id:"viable" %></li>
-      <li class ="cloud-list"><%= link_to "#ecolo", offers_path, class: "hashtags", id:"ecolo" %></li>
-      <li class ="cloud-list"><%= link_to "#equitable", offers_path, class: "hashtags", id:"equitable" %></li>
-    </ul>
+      <ul class ="cloud">
+        <li class ="cloud-list"><%= link_to "#environnemental", offers_path, class: "hashtags", class:"valeur", id:"environnemental", data: {weight: "4"} %></li>
+        <li class ="cloud-list"><%= link_to "#economique", offers_path, class: "hashtags", class:"valeur", id:"economique", data: {weight: "2"} %></li>
+        <li class ="cloud-list"><%= link_to "#social", offers_path, class: "hashtags", class:"valeur", id:"social", data: {weight: "5"} %></li>
+        <li class ="cloud-list"><%= link_to "#viable", offers_path, class: "hashtags", class:"valeur", id:"viable", data: {weight: "8"} %></li>
+        <li class ="cloud-list"><%= link_to "#ecolo", offers_path, class: "hashtags", class:"valeur", id:"ecolo", data: {weight: "6"} %></li>
+        <li class ="cloud-list"><%= link_to "#equitable", offers_path, class: "hashtags", class:"valeur", id:"equitable", data: {weight: "4"} %></li>
+        <li class ="cloud-list"><%= link_to "#diversité", offers_path, class: "hashtags", class:"valeur", id:"diversité", data: {weight: "5"} %></li>
+        <li class ="cloud-list"><%= link_to "#parité", offers_path, class: "hashtags", class:"valeur", id:"parité", data: {weight: "9"} %></li>
+        <li class ="cloud-list"><%= link_to "#inclusion", offers_path, class: "hashtags", class:"valeur", id:"inclusion", data: {weight: "7"} %></li>
+      </ul>
     </div>
   </div>
 </div>
