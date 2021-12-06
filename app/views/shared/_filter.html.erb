@@ -1,5 +1,5 @@
-<%= form_tag offers_path, method: :get do |f| %>
+<%# <%= form_tag offers_path, method: :get do |f| %> %>
   <%= select_tag "search[income]", options_for_select(["", 25000, 30000]) %>
   <%= select_tag "search[contract]", options_for_select(["", "CDI", "CDD", "Freelance", "Apprentissage"]) %>
   <%= submit_tag %>
-<% end %>
+<%# <% end %> %>

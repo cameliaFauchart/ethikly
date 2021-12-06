@@ -2,9 +2,33 @@ class OffersController < ApplicationController
   before_action :authenticate_user!, only: [:show]
 
   def index
-    str=""
-    p params
+    @query=[]
+    if params[:search]
+      params[:search].each do |column, value|
+      unless value.empty?
+        if column == "companies.city" || column == "offers.name"
+          operator = "ILIKE"
+          value = "%#{value}%"
+        elsif column == "income"
+          operator = ">"
+        else 
+          operator = "="
+        end
+        
+        @query << "#{column} #{operator} '#{value}'"
+      end
+      
+    end
+  
+    @offers = Offer.joins(:company).where(@query[0..-1].join(" AND "))
 
+    else
+      @offers = Offer.all
+    end
+  end
+ 
+    
+   #
     # if params[:search].present? && !(params[:search].each_value.all? &:empty?)
     #   @offers = []
     #   @selected_offers = Offer.where("income > :value", value: params[:search][:income])
@@ -24,9 +48,7 @@ class OffersController < ApplicationController
       #@offers = Offer.joins(:company).where(sql_query, ou: "%#{params[:ou]}%",quoi: "%#{params[:quoi]}%")
 
    
-      @offers = Offer.all
-   
-  end
+     
 
   def show
     @offer = Offer.find(params[:id])
