@@ -1,0 +1,20 @@
+// :after crée un pseudo-élément qui sera le dernier enfant
+// de l'élément sélectionné
+#js-text:after{
+  content: ""; // vide ici car nous créeons une | juste après
+  width: 2px;
+  height: 2rem;
+  display: inline-block;
+  background: black;
+  animation: clignote 0.7s infinite linear;
+}
+
+// faire apparaître et disparaître la |
+@keyframes clignote {
+  from{
+        opacity: 0;
+      }
+  to{
+        opacity: 1;
+      }
+}
