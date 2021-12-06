@@ -10,8 +10,19 @@
   margin-bottom: 32px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
-.coeur-fav-profil {
+.coeur-fav-show {
  align-self: flex-end;
+ position: absolute;
+ top: 0.5em;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.center {
+  justify-content: center;
 }
