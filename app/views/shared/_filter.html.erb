@@ -1,5 +1,7 @@
 <%= form_tag offers_path, method: :get do |f| %>
   <%= select_tag "search[income]", options_for_select(["", 25000, 30000]) %>
   <%= select_tag "search[contract]", options_for_select(["", "CDI", "CDD", "Freelance", "Apprentissage"]) %>
+  <%# <%= select_tag "search[created_at]", options_for_select (["", "< 24h", "< 1 semaine", "< 2 semaines"]) %>
+  <%# <%= select_tag "search[eco_scoring]", options_for_select(["", "< 50", "<70", "< 80"]) %>
   <%= submit_tag %>
 <% end %>

@@ -3,7 +3,6 @@ class OffersController < ApplicationController
 
   def index
 
-
     if params[:search].present? && !(params[:search].each_value.all? &:empty?)
       @offers = []
       @selected_offers = Offer.where("income > :value", value: params[:search][:income])
