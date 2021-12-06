@@ -34,6 +34,7 @@
     <div class="card-index">
        <div class="card-index-infos">
          <div>
+           <%= image_tag offer.company.logo_url, alt: "Logo de l'entreprise", class: "card-logo" %>
            <% if current_user %>
               <div id="coeur-fav" class="coeur-fav">
               <% if current_user.already_in_list?(offer) %>
@@ -53,10 +54,11 @@
               <li class="card-offer-name"><%=offer.name%></li>
               <li class="card-company-name"><%=offer.company.name%></li>
                 <div class="score">
-              <% average = [offer.company.eco_scoring, offer.company.social_scoring, offer.company.environmental_scoring] %>
-              <%= average.sum/average.size %> /100
-              <li class="card-company-city"><%=offer.company.city%></li>
+                  <% average = [offer.company.eco_scoring, offer.company.social_scoring, offer.company.environmental_scoring] %>
+                  <%= average.sum/average.size %> /100
                 </div>
+              <li class="card-company-city"><%=offer.company.city%></li>
+
 
               <%= image_tag "genres.png", alt: "logo féminin masculin non-binaire" %>
               <%= image_tag "PMR.png", alt: "logo PMR" %>
