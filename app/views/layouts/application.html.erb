@@ -15,7 +15,7 @@
   <body>
     <div class="content">
 
-      <% if current_page?(controller: "pages", action: "home") %>
+      <% if current_page?(root_path) %>
       <%= render 'shared/navbar_2' %>
       <% else %>
        <%= render 'shared/navbar' %>
