@@ -35,7 +35,7 @@
        <div class="card-index-infos">
          <div>
            <% if current_user %>
-              <div class="coeur-fav">
+              <div id="coeur-fav" class="coeur-fav">
               <% if current_user.already_in_list?(offer) %>
                 <%= link_to wishlist_path(current_user.get_wishlist(offer)), method: :delete, remote: true do %>
                     <%= image_tag "coeur_fav.png", alt: "coeur rose" %>
@@ -67,7 +67,7 @@
         </div>
 
       </div>
-      <p class="card-info-date">Ajoutée le : <%= offer.company.created_at %></p>
+      <p class="card-info-date"><%= offer.company.created_at.strftime("Ajoutée le %m/%d/%Y") %></p>
     </div>
 
 
