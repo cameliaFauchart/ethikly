@@ -1,0 +1,27 @@
+
+#js-text{
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+// :after crée un pseudo-élément qui sera le dernier enfant
+// de l'élément sélectionné
+#js-text:after{
+  content: ""; // vide ici car nous créeons une | juste après
+  width: 2px;
+  height: 1.5rem;
+  display: inline-block;
+  background: black;
+  animation: clignote 0.7s infinite linear;
+}
+
+// animation de la |
+@keyframes clignote {
+  from{
+        opacity: 0;
+      }
+  to{
+        opacity: 1;
+      }
+}

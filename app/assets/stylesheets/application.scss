@@ -9,15 +9,16 @@
 @import "font-awesome";
 
 // Your CSS partials
-@import "components/index";
-@import "pages/index";
+@import "components/animated_cursor";
 @import "components/banner";
-@import "components/card_index";
-@import "components/titles";
-@import "components/form";
-@import "components/card_show";
 @import "components/button";
-@import "components/hashtags";
-@import "components/footer";
-@import "components/icons";
+@import "components/card_index";
 @import "components/card_profile";
+@import "components/card_show";
+@import "components/footer";
+@import "components/form";
+@import "components/hashtags";
+@import "components/icons";
+@import "components/index";
+@import "components/titles";
+@import "pages/index";
