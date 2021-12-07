@@ -1,27 +1,24 @@
 <div class= "container">
-
   <div class= "card-show">
-        <!-- Si l'offre de l'utilisateur appartient déjà à une liste
-              crée une wishlist (coeur blanc)
-             Autrement, l'offre est déjà présente dans la wishlist
-             et il faut donc le supprimer (coeur rose) -->
-          <div class="coeur-fav-profil">
-             <% if current_user.already_in_list?(@offer) %>
-              <%= link_to wishlist_path(current_user.get_wishlist(@offer)), method: :delete, remote: true do %>
-                  <%= image_tag "coeur_fav.png", alt: "coeur rose" %>
-              <% end %>
-
-             <% else %>
-               <%= link_to offer_wishlists_path(@offer), method: :post, remote: true do %>
-                  <%= image_tag "coeur_blanc.png", alt: "coeur blanc" %>
-               <% end %>
-            <% end %>
-          </div>
+     <%= image_tag @offer.company.logo_url, alt: "Logo de l'entreprise", class: "card-logo" %>
+        <div class="coeur-fav-show">
+           <% if current_user.already_in_list?(@offer) %>
+             <%= link_to wishlist_path(current_user.get_wishlist(@offer)), method: :delete, remote: true do %>
+                <i class="fas fa-heart"></i>
+           <% end %>
+           <% else %>
+             <%= link_to offer_wishlists_path(@offer), method: :post, remote: true do %>
+                <i class="far fa-heart"></i>
+             <% end %>
+           <% end %>
+         </div>
 
     <p><%= @offer.name %></p>
     <p><%= @offer.company.name %></p>
-    <p><%= @offer.contract %></p>
-    <p><%= @offer.income %></p>
+    <p><%= image_tag "genres.png", alt: "logo féminin masculin non-binaire" %></p>
+    <p><%= image_tag "PMR.png", alt: "logo PMR" %></p>
+    <p class="underline">Type de contrat : <%= @offer.contract %> |<span class="underline"><%= @offer.company.created_at.strftime("Ajoutée le %d/%m/%Y") %></span>
+    <p>Salaire : <%= @offer.income %></p>
     <p><%= @offer.description %></p>
 
   </div>
