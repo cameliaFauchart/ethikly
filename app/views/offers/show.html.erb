@@ -15,8 +15,8 @@
 
     <p><%= @offer.name %></p>
     <p><%= @offer.company.name %></p>
-    <p><%= image_tag "genres.png", alt: "logo féminin masculin non-binaire", class: "icons" %></p>
-    <p><%= image_tag "PMR.png", alt: "logo PMR" %></p>
+    <%= image_tag "#{rand(2)}.png", alt: "icône accessibilité", class: "icons" %>
+    <%= image_tag "#{rand(2)}.png", alt: "icône accessibilité", class: "icons" %>
     <p class="underline">Type de contrat : <%= @offer.contract %> |<span class="underline"><%= @offer.company.created_at.strftime("Ajoutée le %d/%m/%Y") %></span>
     <p>Salaire : <%= @offer.income %></p>
     <p><%= @offer.description %></p>
