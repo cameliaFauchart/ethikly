@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   end
   resources :wishlists, only: [:destroy, :index]
+
+  patch 'avatar', to: 'application#change_avatar'
 end
