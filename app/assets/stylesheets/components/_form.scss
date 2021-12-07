@@ -6,11 +6,25 @@
 .label-color {
   color:white;
 }
-.form-align-u {
-  display: flex;
-  align-items:flex-end;
-  justify-content: space-between;
 
+.label-color-u {
+  color:black;
+}
+.form-align-u {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+.form-align {
+  display:flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.shared_container{
+  justify-content: center;
+  background-color:#f4f4f4;
+  box-shadow: unset;
 }
 
 .label-align {
