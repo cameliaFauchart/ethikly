@@ -19,8 +19,8 @@ company2 = Company.create!(name: "Le Wagon", city: "Lille", address: "2 Av. des 
                            social_scoring: 95, environmental_scoring: 85, logo_url: "wagon.png")
 company3 = Company.create!(name: "Leroy Merlin", city: "Lezennes", address: "Rue Chanzy", eco_scoring: 36,
                            social_scoring: 38, environmental_scoring: 33, logo_url: "leroymerlin.png")
-company4 = Company.create!(name: "Decathlon", city: "Villeneuve-d'Ascq", address: "121 Bd de Valmy", eco_scoring: 48,
-                           social_scoring: 49, environmental_scoring: 51, logo_url: "decathlon.png")
+company4 = Company.create!(name: "Decathlon", city: "Villeneuve-d'Ascq", address: "121 Bd de Valmy", eco_scoring: 18,
+                           social_scoring: 19, environmental_scoring: 11, logo_url: "decathlon.png")
 company5 = Company.create!(name: "M6 Web", city: "La Madeleine", address: "125 Av de la République", eco_scoring: 77,
                            social_scoring: 72, environmental_scoring: 71, logo_url: "logo_m6.png")
 company6 = Company.create!(name: "La Redoute", city: "Roubaix", address: "110 Rue de Blanchemaille", eco_scoring: 55,
