@@ -24,8 +24,9 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-
+import { AddLetter } from "../components/animated_text";
 document.addEventListener('turbolinks:load', () => {
+  setInterval(AddLetter, 100);
   // Call your functions here, e.g:
   // initSelect2();
 });
