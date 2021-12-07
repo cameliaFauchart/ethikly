@@ -46,8 +46,8 @@
               <li class="card-company-city"><%=offer.company.city%></li>
 
 
-              <%= image_tag "images/#{rand(2)}.png", alt: "icône accessibilité", class: "icons" %>
-              <%= image_tag "images/#{rand(2)}.png", alt: "#", class: "icône accessibilité" %>
+              <%= image_tag "#{rand(2)}.png", alt: "icône accessibilité", class: "icons" %>
+              <%= image_tag "#{rand(2)}.png", alt: "icône accessibilité", class: "icons" %>
 
               <%= link_to "En savoir plus", offer_path(offer), class: "btn-toward-show" %>
             </ul>
