@@ -8,6 +8,11 @@
   margin: 2em;
 }
 
+ol, ul, dl {
+  margin-top: -4em;
+  margin-bottom: 1rem;
+}
+
 .coeur-fav {
   position: absolute;
   right: 20px;
@@ -89,10 +94,10 @@ padding-bottom: 5px;
   position: relative;
 }
 
-.score {
-  padding-bottom: 6px;
+//.score {
+ // padding-bottom: 6px;
 
-}
+//}
 
  .btn-toward-show {
     background-color: rgba(99, 79, 161, 1);
