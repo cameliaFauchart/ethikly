@@ -5,15 +5,15 @@ text.innerHTML = "";
 let sum = 0;
 // setInterval répète la méthode avec un délai fixé
 // entre chaque appel
-setInterval(AddLetter()[100]);
 
-const AddLetter() => {
+
+const AddLetter = () => {
   if (sum < splitText.length) {
     text.innerHTML += splitText[sum];
     sum++;
   }
 }
-
+setInterval(AddLetter(),[100]);
 // Code test pas encore efficient
 
 

@@ -66,7 +66,7 @@
                     <%= image_tag "genres.png", alt: "logo féminin masculin non-binaire" %>
                     <%= image_tag "PMR.png", alt: "logo PMR" %>
 
-                    <%= link_to "En savoir plus", offer_path(offer), class: "btn-toward-show" %>
+                     <button class= "btn-toward-show" data-showid="show-card-<%=offer.id%>"> "En savoir plus" </button>
                 </ul>
 
               </div>
@@ -79,9 +79,22 @@
 
 
       <div class ="details-offers" >
-        <h1>coucou</h1>
+        <h1>Futur show</h1>
+        <img src="https://media.istockphoto.com/vectors/professional-stress-management-at-work-cartoon-vector-id1154046242" alt="" class="w-100">
+        <% @offers.each do |offer| %>
+        <div class="index-details d-none" id="show-card-<%=offer.id%>">
+            <h2> <%= offer.name %> </h2>
+        </div>
+
+        <% end %>
+
+
+
+
+
       </div>
     </div>
+
 
 
 
