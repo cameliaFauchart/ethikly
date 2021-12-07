@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :wishlists
   has_many :offers, through: :wishlists
+  has_one_attached :photo
 
   # Si l'offer passée en paramètre se trouve
   # dans la wishlist de l'user, on retourne TRUE

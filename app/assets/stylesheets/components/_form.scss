@@ -1,7 +1,7 @@
 .form-control {
-  color: white;
+  color: black;
   border-radius: 15px;
-  }
+}
 
 .label-color {
   color:white;
@@ -10,6 +10,7 @@
 .label-color-u {
   color:black;
 }
+
 .form-align-u {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -25,11 +26,4 @@
   justify-content: center;
   background-color:#f4f4f4;
   box-shadow: unset;
-}
-
-.label-align {
-//   padding-left:10px;
-//   padding-right:10px;
-//   padding-bottom:20px;
-// }
 }
