@@ -3,10 +3,24 @@
   justify-content: space-between;
 }
 
+.navbar-home {
+ justify-content: center;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+
+}
+.navbar-home-avatar {
+  position: absolute;
+  right: 0;
+}
+
+.navbar-home .navbar-brand img  {
+  margin: 0 auto;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 450px;
+
 }
