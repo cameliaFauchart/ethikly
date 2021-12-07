@@ -36,7 +36,10 @@
        <div class="card-index-infos">
          <div>
            <%= image_tag offer.company.logo_url, alt: "Logo de l'entreprise", class: "card-logo" %>
-           <% if current_user %>
+           <div role="progressbar" aria-valuenow="62" aria-valuemin="0"
+            aria-valuemax="100" style="--value:62"></div>
+
+            <% if current_user %>
               <div id="coeur-anchor-<%= offer.id%>" class="coeur-fav">
               <% if current_user.already_in_list?(offer) %>
                 <%= link_to wishlist_path(current_user.get_wishlist(offer)), method: :delete, remote: true do %>
