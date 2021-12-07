@@ -11,8 +11,8 @@ const displayShow = () => {
         targetShow.classList.toggle("d-none")
         if (document.querySelector(".img-hidden")) {
           const picture = document.querySelector(".img-hidden")
-          //picture.style.visibility = "hidden";
-          picture.classList.toggle("make-hide")
+          picture.style.visibility = "hidden";
+          // picture.classList.toggle("make-hide")
           console.log(picture)
         }
 
@@ -23,3 +23,8 @@ const displayShow = () => {
 
 }
 export { displayShow }
+
+// const newCardId = document.querySelector(`#${cardId}`)
+// newCardId.forEach ((offer) => {
+//
+// })
