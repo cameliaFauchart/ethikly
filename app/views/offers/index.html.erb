@@ -64,10 +64,6 @@
             <ul>
               <li class="card-offer-name"><%=offer.name%></li>
               <li class="card-company-name"><%=offer.company.name%></li>
-                <div class="score">
-                  <% average = [offer.company.eco_scoring, offer.company.social_scoring, offer.company.environmental_scoring] %>
-                  <%= average.sum/average.size %> /100
-                </div>
               <li class="card-company-city"><%=offer.company.city%></li>
 
 
