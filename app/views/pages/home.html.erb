@@ -1,29 +1,29 @@
 <div class="banner-homepage">
   <h5>Donnez du sens à votre vie! Choisissez un travail éthique!</h5>
   <div class="container-homepage">
-    <div class= "form-align-u">
-      <div class="label-align">
-        <%= form_tag offers_path, method: :get do %>
-        <%= label_tag(:query,"Localisation du poste", class: "label-color") %>
-        <%= text_field_tag :ou,
-        params[:query],
-        class: "form-control",
-        placeholder: "Où?"
-        %>
-      </div>
-      <div class="label-align">
-        <%= label_tag(:query,"Le job de vos rêves",class: "label-color") %>
-        <%= text_field_tag :quoi,
-        params[:query],
-        class: "form-control",
-        placeholder: "Quoi?"
-        %>
-      </div>
-      <div class ="buttonGO">
-        <%= submit_tag "Go👌", class: "buttonGo" %>
-        <% end %>
-      </div>
+        
+        <%= form_tag offers_path, method: :get, class:"form-align" do %>
+        <div class="label-align">
+          <%= label_tag(:query,"Localisation du poste", class: "label-color") %>
+          <%= text_field_tag "search[companies.city]",
+          params[:query],
+          class: "form-control",
+          placeholder: "Où?"
+          %>
+        </div>
+        <div class="label-align">
+          <%= label_tag(:query,"Le job de vos rêves",class: "label-color") %>
+          <%= text_field_tag "search[offers.name]",
+          params[:query],
+          class: "form-control",
+          placeholder: "Quoi?"
+          %>
+        </div>
+        <div class ="buttonGO">
+          <%= submit_tag "Go👌", class: "buttonGo" %>
+          <% end %>
     </div>
+    
     <div class ="hashtag-container">
       <ul class ="cloud">
         <li class ="cloud-list"><%= link_to "#environnemental", offers_path, class: "hashtags", class:"valeur", id:"environnemental", data: {weight: "4"} %></li>

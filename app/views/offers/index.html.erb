@@ -1,32 +1,11 @@
+<div class ="blue-container" >
+</div>
 <div class= "container-index-search">
-      <div class= "form-align-u">
-        <div class="label-align">
-          <%= form_tag offers_path, as: :search, method: :get do %>
-          <%= label_tag(:query,"Localisation du poste", class: "label-color") %>
-          <%= text_field_tag "search[companies.city]",
-          params[:query],
-          class: "form-control",
-          placeholder: "Où?"
-          %>
-        </div>
 
-        <div class="label-align">
-          <%= label_tag(:query,"Le job de vos rêves",class: "label-color") %>
-          <%= text_field_tag "search[offers.name]",
-          params[:query],
-          class: "form-control",
-          placeholder: "Quoi?"
-          %>
-        </div>
-<%= render "shared/filter" %>
-        <div class ="buttonGO">
-          <%= submit_tag "Go👌", class: "buttonGo" %>
-          <% end %>
-        </div>
-      </div>
-
-    </div>
-
+  <div class= "form-align-u">  
+    <%= render "shared/filter" %>
+  </div>
+</div>
 
 <div class="container">
 
