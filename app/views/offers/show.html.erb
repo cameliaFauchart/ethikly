@@ -8,12 +8,12 @@
           <div class="coeur-fav-profil">
              <% if current_user.already_in_list?(@offer) %>
               <%= link_to wishlist_path(current_user.get_wishlist(@offer)), method: :delete, remote: true do %>
-                  <%= image_tag "coeur_fav.png", alt: "coeur rose" %>
+                  <i class="fas fa-heart"></i>
               <% end %>
 
              <% else %>
                <%= link_to offer_wishlists_path(@offer), method: :post, remote: true do %>
-                  <%= image_tag "coeur_blanc.png", alt: "coeur blanc" %>
+                  <i class="far fa-heart"></i>
                <% end %>
             <% end %>
           </div>
