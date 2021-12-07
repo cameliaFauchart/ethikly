@@ -8,9 +8,9 @@
 // :after crée un pseudo-élément qui sera le dernier enfant
 // de l'élément sélectionné
 #js-text:after{
-  content: ""; // vide ici car nous créeons une | juste après
-  width: 2px;
-  height: 1.5rem;
+  content: "|"; // vide ici car nous créeons une | juste après
+  width: 2.5px;
+  height: 1.3rem;
   display: inline-block;
   background: black;
   animation: clignote 0.7s infinite linear;

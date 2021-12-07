@@ -53,6 +53,7 @@
                   </div>
                 <% end %>
 
+
                 <ul>
                   <li class="card-offer-name"><%=offer.name%></li>
                   <li class="card-company-name"><%=offer.company.name%></li>
@@ -63,11 +64,49 @@
                   <li class="card-company-city"><%=offer.company.city%></li>
 
 
-                    <%= image_tag "genres.png", alt: "logo féminin masculin non-binaire" %>
-                    <%= image_tag "PMR.png", alt: "logo PMR" %>
+  <h2>All The offers</h2>
+  <% @offers.each do |offer| %>
+    <div class="card-index">
+       <div class="card-index-infos">
+         <div>
+           <!-- eco_scoring des seeds -->
+           <% average = [offer.company.eco_scoring, offer.company.social_scoring, offer.company.environmental_scoring] %>
+                <% result = average.sum/average.size %>
+
+           <%= image_tag offer.company.logo_url, alt: "Logo de l'entreprise", class: "card-logo" %>
+           <!-- progress bar avec eco_scoring -->
+           <div role="progressbar" aria-valuenow="<%= result %>" aria-valuemin="0"
+            aria-valuemax="100" style="--value:<%= result%>"></div>
+
+            <!-- méthodes create/delete sur coeurs -->
+            <% if current_user %>
+              <div id="coeur-anchor-<%= offer.id%>" class="coeur-fav">
+              <% if current_user.already_in_list?(offer) %>
+                <%= link_to wishlist_path(current_user.get_wishlist(offer)), method: :delete, remote: true do %>
+                    <i class="fas fa-heart"></i>
+                <% end %>
+
+              <% else %>
+                <%= link_to offer_wishlists_path(offer), method: :post, remote: true do %>
+                    <i class="far fa-heart"></i>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
+
+            <!-- reste des informations de la carte -->
+            <ul>
+              <li class="card-offer-name"><%=offer.name%></li>
+              <li class="card-company-name"><%=offer.company.name%></li>
+              <li class="card-company-city"><%=offer.company.city%></li>
+              
+              <%= image_tag "#{rand(2)}.png", alt: "icône accessibilité", class: "icons" %>
+              <%= image_tag "#{rand(2)}.png", alt: "icône accessibilité", class: "icons" %>
+              
 
                      <button class= "btn-toward-show" data-showid="show-card-<%=offer.id%>"> "En savoir plus" </button>
                 </ul>
+
 
               </div>
 
@@ -76,6 +115,7 @@
           </div>
         <% end %>
       </div>
+
 
 
       <div class ="details-offers" >
@@ -98,12 +138,4 @@
 
 
 
-
-
-<%# cards
-each
-card
-contenu
-fermeture card
-          each
-          cards %>
+</div>
