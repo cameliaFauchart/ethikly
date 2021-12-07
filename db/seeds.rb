@@ -12,25 +12,31 @@ Offer.destroy_all
 Company.destroy_all
 User.destroy_all
 
-
 puts "Creating companies..."
-company1 = Company.create!(name: "OVH", city: "Roubaix", address: "2 Rue Kellermann", eco_scoring: 56,
-                           social_scoring: 66, environmental_scoring: 76, logo_url:"OVH.png")
-company2 = Company.create!(name: "Le Wagon", city: "Lille", address: "2 Av. des Saules", eco_scoring: 76,
-                           social_scoring: 78, environmental_scoring: 88, logo_url: "wagon.png")
-company3 = Company.create!(name: "Leroy Merlin", city: "Lezennes", address: "Rue Chanzy", eco_scoring: 55,
-                           social_scoring: 69, environmental_scoring: 64, logo_url: "leroymerlin.png")
-company4 = Company.create!(name: "Decathlon", city: "Villeneuve-d'Ascq", address: "121 Bd de Valmy", eco_scoring: 90,
-                           social_scoring: 76, environmental_scoring: 88, logo_url: "decathlon.png")
-company5 = Company.create!(name: "M6 Web", city: "La Madeleine", address: "125 Av de la République ", eco_scoring: 77,
-                           social_scoring: 83, environmental_scoring: 49, logo_url: "logo_m6.png")
-
-
+company1 = Company.create!(name: "OVH", city: "Roubaix", address: "2 Rue Kellermann", eco_scoring: 15,
+                           social_scoring: 20, environmental_scoring: 19, logo_url:"OVH.png")
+company2 = Company.create!(name: "Le Wagon", city: "Lille", address: "2 Av. des Saules", eco_scoring: 87,
+                           social_scoring: 95, environmental_scoring: 85, logo_url: "wagon.png")
+company3 = Company.create!(name: "Leroy Merlin", city: "Lezennes", address: "Rue Chanzy", eco_scoring: 36,
+                           social_scoring: 38, environmental_scoring: 33, logo_url: "leroymerlin.png")
+company4 = Company.create!(name: "Decathlon", city: "Villeneuve-d'Ascq", address: "121 Bd de Valmy", eco_scoring: 18,
+                           social_scoring: 19, environmental_scoring: 11, logo_url: "decathlon.png")
+company5 = Company.create!(name: "M6 Web", city: "La Madeleine", address: "125 Av de la République", eco_scoring: 77,
+                           social_scoring: 72, environmental_scoring: 71, logo_url: "logo_m6.png")
+company6 = Company.create!(name: "La Redoute", city: "Roubaix", address: "110 Rue de Blanchemaille", eco_scoring: 55,
+                           social_scoring: 60, environmental_scoring: 52, logo_url: "laredoute.jpg")
+company7 = Company.create!(name: "Les Mains Dans Le Guidon", city: "Lille", address: "49 rue Bourignon", eco_scoring: 97,
+                           social_scoring: 89, environmental_scoring: 94, logo_url: "les_mains.png")
+company8 = Company.create!(name: "Bio C' Bon", city: "Lille", address: "45 rue Colbert", eco_scoring: 80,
+                           social_scoring: 69, environmental_scoring: 72, logo_url: "bio_c_bon.png")
 p company1
 p company2
 p company3
 p company4
 p company5
+p company6
+p company7
+p company8
 puts "Companies creation finished!"
 
 puts "Creating offers..."
@@ -99,6 +105,71 @@ offer5 = Offer.new(name: "Développeur Back end", description: "Dans le cadre d'
                        documenter les projets.
                        Au sein d'une équipe dynamique et conviviale, vous pouvez être amené à faire un petit café / du
                        thé pour travailler dans la bonne humeur !", income: 28_500, contract: "Apprentissage")
+offer6 = Offer.new(name: "Social Media Manager", description: "Dans le cadre d'un accroissement d'activité,
+                       vous rejoignez une équipe de 4-5 Développeurs (tous niveaux), pour travailler ensemble sur la
+                       conception et/ou le développement de projets (sites vitrine, site web,...) pour les clients de
+                       l'entreprise.
+                       Pour ce faire, vous êtes amené à analyser et participer à l'élaboration des nouveaux projets :
+                       prise de brief, rédaction/ mise en place des spécifications techniques, définir les délais pour
+                       chaque projet,...
+                       Vous intervenez également sur des projets déjà existants pour assurer le développement de
+                       nouvelles fonctionnalités, prendre en main la maintenance et les interventions nécessaires,...
+                       Enfin, de façon générale, vous améliorez de façon continue votre code et prenez le temps de
+                       documenter les projets.
+                       Au sein d'une équipe dynamique et conviviale, vous pouvez être amené à faire un petit café / du
+                       thé pour travailler dans la bonne humeur !", income: 33_500, contract: "CDI")
+offer7 = Offer.new(name: "Graphiste", description: "Dans le cadre d'un accroissement d'activité,
+                       vous rejoignez une équipe de 4-5 Développeurs (tous niveaux), pour travailler ensemble sur la
+                       conception et/ou le développement de projets (sites vitrine, site web,...) pour les clients de
+                       l'entreprise.
+                       Pour ce faire, vous êtes amené à analyser et participer à l'élaboration des nouveaux projets :
+                       prise de brief, rédaction/ mise en place des spécifications techniques, définir les délais pour
+                       chaque projet,...
+                       Vous intervenez également sur des projets déjà existants pour assurer le développement de
+                       nouvelles fonctionnalités, prendre en main la maintenance et les interventions nécessaires,...
+                       Enfin, de façon générale, vous améliorez de façon continue votre code et prenez le temps de
+                       documenter les projets.
+                       Au sein d'une équipe dynamique et conviviale, vous pouvez être amené à faire un petit café / du
+                       thé pour travailler dans la bonne humeur !", income: 26_500, contract: "Freelance")
+offer8 = Offer.new(name: "Content Manager", description: "Dans le cadre d'un accroissement d'activité,
+                       vous rejoignez une équipe de 4-5 Développeurs (tous niveaux), pour travailler ensemble sur la
+                       conception et/ou le développement de projets (sites vitrine, site web,...) pour les clients de
+                       l'entreprise.
+                       Pour ce faire, vous êtes amené à analyser et participer à l'élaboration des nouveaux projets :
+                       prise de brief, rédaction/ mise en place des spécifications techniques, définir les délais pour
+                       chaque projet,...
+                       Vous intervenez également sur des projets déjà existants pour assurer le développement de
+                       nouvelles fonctionnalités, prendre en main la maintenance et les interventions nécessaires,...
+                       Enfin, de façon générale, vous améliorez de façon continue votre code et prenez le temps de
+                       documenter les projets.
+                       Au sein d'une équipe dynamique et conviviale, vous pouvez être amené à faire un petit café / du
+                       thé pour travailler dans la bonne humeur !", income: 23_000, contract: "CDI")
+offer9 = Offer.new(name: "Scrum Master", description: "Dans le cadre d'un accroissement d'activité,
+                       vous rejoignez une équipe de 4-5 Développeurs (tous niveaux), pour travailler ensemble sur la
+                       conception et/ou le développement de projets (sites vitrine, site web,...) pour les clients de
+                       l'entreprise.
+                       Pour ce faire, vous êtes amené à analyser et participer à l'élaboration des nouveaux projets :
+                       prise de brief, rédaction/ mise en place des spécifications techniques, définir les délais pour
+                       chaque projet,...
+                       Vous intervenez également sur des projets déjà existants pour assurer le développement de
+                       nouvelles fonctionnalités, prendre en main la maintenance et les interventions nécessaires,...
+                       Enfin, de façon générale, vous améliorez de façon continue votre code et prenez le temps de
+                       documenter les projets.
+                       Au sein d'une équipe dynamique et conviviale, vous pouvez être amené à faire un petit café / du
+                       thé pour travailler dans la bonne humeur !", income: 33_000, contract: "CDI")
+offer10 = Offer.new(name: "Social Media Manager", description: "Dans le cadre d'un accroissement d'activité,
+                       vous rejoignez une équipe de 4-5 Développeurs (tous niveaux), pour travailler ensemble sur la
+                       conception et/ou le développement de projets (sites vitrine, site web,...) pour les clients de
+                       l'entreprise.
+                       Pour ce faire, vous êtes amené à analyser et participer à l'élaboration des nouveaux projets :
+                       prise de brief, rédaction/ mise en place des spécifications techniques, définir les délais pour
+                       chaque projet,...
+                       Vous intervenez également sur des projets déjà existants pour assurer le développement de
+                       nouvelles fonctionnalités, prendre en main la maintenance et les interventions nécessaires,...
+                       Enfin, de façon générale, vous améliorez de façon continue votre code et prenez le temps de
+                       documenter les projets.
+                       Au sein d'une équipe dynamique et conviviale, vous pouvez être amené à faire un petit café / du
+                       thé pour travailler dans la bonne humeur !", income: 38_500, contract: "CDD")
 
 offer1.company = company1
 offer1.save!
@@ -119,6 +190,26 @@ p offer4
 offer5.company = company5
 offer5.save!
 p offer5
+
+offer6.company = company6
+offer6.save!
+p offer6
+
+offer7.company = company7
+offer7.save!
+p offer7
+
+offer8.company = company8
+offer8.save!
+p offer8
+
+offer9.company = company6
+offer9.save!
+p offer9
+
+offer10.company = company2
+offer10.save!
+p offer10
 puts "Offers creation finished!"
 
 puts "Creating users..."
