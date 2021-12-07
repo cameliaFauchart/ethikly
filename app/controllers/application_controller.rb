@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
     redirect_to wishlists_path
   end
 
+  private
+
   def avatar_params
     params.require(:user).permit(:photo)
   end
