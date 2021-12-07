@@ -1,9 +1,9 @@
 <div class= "container-index-search">
       <div class= "form-align-u">
         <div class="label-align">
-          <%= form_tag offers_path, method: :get do %>
+          <%= form_tag offers_path, as: :search, method: :get do %>
           <%= label_tag(:query,"Localisation du poste", class: "label-color") %>
-          <%= text_field_tag :ou,
+          <%= text_field_tag "search[companies.city]",
           params[:query],
           class: "form-control",
           placeholder: "Où?"
@@ -12,23 +12,24 @@
 
         <div class="label-align">
           <%= label_tag(:query,"Le job de vos rêves",class: "label-color") %>
-          <%= text_field_tag :quoi,
+          <%= text_field_tag "search[offers.name]",
           params[:query],
           class: "form-control",
           placeholder: "Quoi?"
           %>
         </div>
-
+<%= render "shared/filter" %>
         <div class ="buttonGO">
           <%= submit_tag "Go👌", class: "buttonGo" %>
           <% end %>
         </div>
       </div>
+    
     </div>
 
 
 <div class="container">
-<%= render "shared/filter" %>
+
   <h2>All The offers</h2>
   <% @offers.each do |offer| %>
     <div class="card-index">
@@ -49,7 +50,7 @@
               <% end %>
             </div>
           <% end %>
-
+         
             <ul>
               <li class="card-offer-name"><%=offer.name%></li>
               <li class="card-company-name"><%=offer.company.name%></li>
@@ -86,3 +87,4 @@ contenu
 fermeture card
           each
           cards %>
+
