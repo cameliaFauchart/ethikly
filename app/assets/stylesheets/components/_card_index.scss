@@ -6,7 +6,16 @@
   width: 417px;
   border-radius: 8px;
   margin: 2em;
+  transform: translate(10px, 10px);
 }
+
+.card-index:hover{
+  transform: translateY(0.3px);
+  transition: 0.5s;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+
 
 ol, ul, dl {
   margin-top: -4em;
@@ -99,11 +108,6 @@ padding-bottom: 5px;
   display: flex;
   position: relative;
 }
-
-//.score {
- // padding-bottom: 6px;
-
-//}
 
  .btn-toward-show {
     background-color: rgba(99, 79, 161, 1);
