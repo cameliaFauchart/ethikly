@@ -13,6 +13,10 @@ ol, ul, dl {
   margin-bottom: 1rem;
 }
 
+img.icons {
+  width: 1.5em;
+}
+
 .coeur-fav {
   position: absolute;
   right: 20px;
@@ -20,13 +24,13 @@ ol, ul, dl {
   right: 12px;
 }
 
-.coeur-fav-rose {
-  position: absolute;
-  right: 20px;
-  top: 12px;
-  right: 12px;
-  color: rgba(255, 153, 153, 1);
-}
+//.coeur-fav-rose {
+ // position: absolute;
+ // right: 20px;
+ // top: 12px;
+  //right: 12px;
+ // color: rgba(255, 153, 153, 1);
+//}
 
 .card-logo {
   width: 50px;
@@ -56,11 +60,12 @@ padding-bottom: 5px;
   padding-bottom: 15px;
 }
 
-.card-index > img {
-  height: 100px;
-  width: 100%;
-  object-fit: cover;
-}
+
+//.card-index > img {
+ // height: 100px;
+ // width: 100%;
+  //object-fit: cover;
+//}
 
 .card-index h2 {
   font-size: 16px;
@@ -71,7 +76,8 @@ padding-bottom: 5px;
 .card-index p {
   font-size: 12px;
   opacity: .7;
-  margin: 0;
+  margin-bottom: 3em;
+  margin-left: 0.5em;
 }
 
 .card-index .card-index-infos {
@@ -108,7 +114,7 @@ padding-bottom: 5px;
     border-radius: 4px;
     position: absolute;
     right: 20px;
-    bottom: 30px;
+    bottom: 10px;
     border-radius: 10px;
 }
 
@@ -124,9 +130,4 @@ text-shadow:
 0 0 100px rgb(230, 18, 124);
 animation: lumiere 1s infinite linear;
 border-radius: 10px;
-}
-
-.card-info-date {
-  padding-top: 15px;
-  padding-left: 10px;
 }
