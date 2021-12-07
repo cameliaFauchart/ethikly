@@ -1,81 +1,93 @@
-<div class= "container-index-search">
-      <div class= "form-align-u">
-        <div class="label-align">
-          <%= form_tag offers_path, method: :get do %>
-          <%= label_tag(:query,"Localisation du poste", class: "label-color") %>
-          <%= text_field_tag :ou,
-          params[:query],
-          class: "form-control",
-          placeholder: "Où?"
-          %>
-        </div>
 
-        <div class="label-align">
-          <%= label_tag(:query,"Le job de vos rêves",class: "label-color") %>
-          <%= text_field_tag :quoi,
-          params[:query],
-          class: "form-control",
-          placeholder: "Quoi?"
-          %>
-        </div>
+  <div class= "container-index-search">
+        <div class= "form-align-u">
+          <div class="label-align">
+            <%= form_tag offers_path, method: :get do %>
+            <%= label_tag(:query,"Localisation du poste", class: "label-color") %>
+            <%= text_field_tag :ou,
+            params[:query],
+            class: "form-control",
+            placeholder: "Où?"
+            %>
+          </div>
 
-        <div class ="buttonGO">
-          <%= submit_tag "Go👌", class: "buttonGo" %>
-          <% end %>
+          <div class="label-align">
+            <%= label_tag(:query,"Le job de vos rêves",class: "label-color") %>
+            <%= text_field_tag :quoi,
+            params[:query],
+            class: "form-control",
+            placeholder: "Quoi?"
+            %>
+          </div>
+
+          <div class ="buttonGO">
+            <%= submit_tag "Go👌", class: "buttonGo" %>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
 
 
-<div class="container">
-<%= render "shared/filter" %>
-  <h2>All The offers</h2>
-  <% @offers.each do |offer| %>
-    <div class="card-index">
-       <div class="card-index-infos">
-         <div>
-           <%= image_tag offer.company.logo_url, alt: "Logo de l'entreprise", class: "card-logo" %>
-           <% if current_user %>
-              <div id="coeur-fav" class="coeur-fav">
-              <% if current_user.already_in_list?(offer) %>
-                <%= link_to wishlist_path(current_user.get_wishlist(offer)), method: :delete, remote: true do %>
-                    <%= image_tag "coeur_fav.png", alt: "coeur rose" %>
+  <div class="container">
+    <%= render "shared/filter" %>
+    <h2>All The offers</h2>
+    <div class="d-flex">
+      <div>
+        <% @offers.each do |offer| %>
+          <div class="card-index">
+            <div class="card-index-infos">
+              <div>
+                <%= image_tag offer.company.logo_url, alt: "Logo de l'entreprise", class: "card-logo" %>
+                <% if current_user %>
+                    <div id="coeur-fav" class="coeur-fav">
+                    <% if current_user.already_in_list?(offer) %>
+                      <%= link_to wishlist_path(current_user.get_wishlist(offer)), method: :delete, remote: true do %>
+                          <%= image_tag "coeur_fav.png", alt: "coeur rose" %>
+                      <% end %>
+
+                    <% else %>
+                      <%= link_to offer_wishlists_path(offer), method: :post, remote: true do %>
+                          <%= image_tag "coeur_blanc.png", alt: "coeur blanc" %>
+                      <% end %>
+                    <% end %>
+                  </div>
                 <% end %>
 
-              <% else %>
-                <%= link_to offer_wishlists_path(offer), method: :post, remote: true do %>
-                    <%= image_tag "coeur_blanc.png", alt: "coeur blanc" %>
-                <% end %>
-              <% end %>
+
+                <ul>
+                  <li class="card-offer-name"><%=offer.name%></li>
+                  <li class="card-company-name"><%=offer.company.name%></li>
+                    <div class="score">
+                      <% average = [offer.company.eco_scoring, offer.company.social_scoring, offer.company.environmental_scoring] %>
+                      <%= average.sum/average.size %> /100
+                    </div>
+                  <li class="card-company-city"><%=offer.company.city%></li>
+
+
+                  <%= image_tag "genres.png", alt: "logo féminin masculin non-binaire" %>
+                  <%= image_tag "PMR.png", alt: "logo PMR" %>
+
+                  <%= link_to "En savoir plus", offer_path(offer), class: "btn-toward-show" %>
+                </ul>
+
+              </div>
+
             </div>
-          <% end %>
-
-            <ul>
-              <li class="card-offer-name"><%=offer.name%></li>
-              <li class="card-company-name"><%=offer.company.name%></li>
-                <div class="score">
-                  <% average = [offer.company.eco_scoring, offer.company.social_scoring, offer.company.environmental_scoring] %>
-                  <%= average.sum/average.size %> /100
-                </div>
-              <li class="card-company-city"><%=offer.company.city%></li>
+            <p class="card-info-date"><%= offer.company.created_at.strftime("Ajoutée le %m/%d/%Y") %></p>
+          </div>
 
 
-              <%= image_tag "genres.png", alt: "logo féminin masculin non-binaire" %>
-              <%= image_tag "PMR.png", alt: "logo PMR" %>
 
-              <%= link_to "En savoir plus", offer_path(offer), class: "btn-toward-show" %>
-            </ul>
-
-        </div>
-
+        <% end %>
       </div>
-      <p class="card-info-date"><%= offer.company.created_at.strftime("Ajoutée le %m/%d/%Y") %></p>
+
+
+    <div class ="details-offers" >
+      <h1>coucou</h1>
     </div>
+  </div>
 
 
-  <% end %>
-
-</div>
 
 
 
