@@ -1,13 +1,68 @@
-<div class ="blue-container" >
-</div>
-<div class= "container-index-search">
+  <div class= "container-index-search">
+    <div class= "form-align-u">
+      <div class="label-align">
+        <%= form_tag offers_path, as: :search, method: :get do %>
+        <%= label_tag(:query,"Localisation du poste", class: "label-color") %>
+        <%= text_field_tag "search[companies.city]",
+        params[:query],
+        class: "form-control",
+        placeholder: "Où?"
+        %>
+      </div>
 
-  <div class= "form-align-u">
-    <%= render "shared/filter" %>
+      <div class="label-align">
+        <%= label_tag(:query,"Le job de vos rêves",class: "label-color") %>
+        <%= text_field_tag "search[offers.name]",
+        params[:query],
+        class: "form-control",
+        placeholder: "Quoi?"
+        %>
+      </div>
+      <%= render "shared/filter" %>
+      <div class ="buttonGO">
+        <%= submit_tag "Go👌", class: "buttonGo" %>
+        <% end %>
+      </div>
+    </div>
+
   </div>
-</div>
 
-<div class="container">
+
+  <div class="container">
+
+    <h2>All The offers</h2>
+    <div class="d-flex">
+      <div class= "cards-for-index">
+        <% @offers.each do |offer| %>
+          <div class="card-index">
+            <div class="card-index-infos">
+              <div>
+                <%= image_tag offer.company.logo_url, alt: "Logo de l'entreprise", class: "card-logo" %>
+                <% if current_user %>
+                  <div id="coeur-anchor-<%= offer.id%>" class="coeur-fav">
+                    <% if current_user.already_in_list?(offer) %>
+                      <%= link_to wishlist_path(current_user.get_wishlist(offer)), method: :delete, remote: true do %>
+                          <i class="fas fa-heart"></i>
+                      <% end %>
+
+                    <% else %>
+                      <%= link_to offer_wishlists_path(offer), method: :post, remote: true do %>
+                          <i class="far fa-heart"></i>
+                      <% end %>
+                    <% end %>
+                  </div>
+                <% end %>
+
+
+                <ul>
+                  <li class="card-offer-name"><%=offer.name%></li>
+                  <li class="card-company-name"><%=offer.company.name%></li>
+                    <div class="score">
+                      <% average = [offer.company.eco_scoring, offer.company.social_scoring, offer.company.environmental_scoring] %>
+                      <%= average.sum/average.size %> /100
+                    </div>
+                  <li class="card-company-city"><%=offer.company.city%></li>
+
 
   <h2>All The offers</h2>
   <% @offers.each do |offer| %>
@@ -44,21 +99,43 @@
               <li class="card-offer-name"><%=offer.name%></li>
               <li class="card-company-name"><%=offer.company.name%></li>
               <li class="card-company-city"><%=offer.company.city%></li>
-
-
+              
               <%= image_tag "#{rand(2)}.png", alt: "icône accessibilité", class: "icons" %>
               <%= image_tag "#{rand(2)}.png", alt: "icône accessibilité", class: "icons" %>
+              
 
-              <%= link_to "En savoir plus", offer_path(offer), class: "btn-toward-show" %>
-            </ul>
+                     <button class= "btn-toward-show" data-showid="show-card-<%=offer.id%>"> "En savoir plus" </button>
+                </ul>
 
+
+              </div>
+
+            </div>
+            <p class="card-info-date"><%= offer.company.created_at.strftime("Ajoutée le %m/%d/%Y") %></p>
+          </div>
+        <% end %>
+      </div>
+
+
+
+      <div class ="details-offers" >
+        <h1>Futur show</h1>
+        <img src="https://media.istockphoto.com/vectors/professional-stress-management-at-work-cartoon-vector-id1154046242" alt="" class="w-100 img-hidden">
+        <% @offers.each do |offer| %>
+        <div class="index-details d-none" id="show-card-<%=offer.id%>">
+            <h2> <%= offer.name %> </h2>
         </div>
 
+        <% end %>
+
+
+
+
+
       </div>
-      <p class="card-info-date"><%= offer.company.created_at.strftime("Ajoutée le %d/%m/%Y") %></p>
     </div>
 
 
-  <% end %>
+
 
 </div>
