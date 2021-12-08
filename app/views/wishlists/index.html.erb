@@ -1,6 +1,6 @@
 <div class="container">
   <div class="myprofile">
-    <div class="btn-avatar">
+    <div>
       <%= cl_image_tag current_user.photo.key, width: 150, height: 150, crop: :fill, gravity: :auto, class: "avatar-profile" %>
       <%= simple_form_for(current_user, url: avatar_path, html: { method: :patch }) do |f| %>
       <%= f.input :photo, as: :file %>
@@ -21,30 +21,53 @@
   </div>
   <div class="mywishlist">
     <div class="title-profile"><h2>Mes offres favorites</h2></div>
-      <div class="d-flex">
-        <div class="card-wishlist">
-          <%@wishlists.each do |wishlist|%>
-            <div class="card-index">
-              <div class="card-index-infos">
-                <div>
+    <div class="d-flex">
+      <div class= "cards-for-index">
+        <%@wishlists.each do |wishlist|%>
+        <div class="card-index">
+          <div class="card-index-infos">
+            <div>
+                  <!-- eco_scoring des seeds -->
+                  <% average = [wishlist.offer.company.eco_scoring, wishlist.offer.company.social_scoring, wishlist.offer.company.environmental_scoring] %>
+                      <% result = average.sum/average.size %>
+
+                  <%= image_tag wishlist.offer.company.logo_url, alt: "Logo de l'entreprise", class: "card-logo" %>
+                  <!-- progress bar avec eco_scoring -->
+                  <div role="progressbar" aria-valuenow="<%= result %>" aria-valuemin="0"
+                  aria-valuemax="100" style="--value:<%= result%>"></div>
+
+                  <!-- méthodes create/delete sur coeurs -->
+
+
+
+                  <!-- reste des informations de la carte -->
                   <ul>
-                    <li><%=wishlist.offer.name%></li>
-                    <li><%=wishlist.offer.company.name%></li>
-                    <li><%=wishlist.offer.company.city%></li>
-                    <%average = [wishlist.offer.company.eco_scoring, wishlist.offer.company.social_scoring, wishlist.offer.company.environmental_scoring] %>
-                    <%=average.sum/average.size%>/100
+                    <li class="card-offer-name"><%=wishlist.offer.name%></li>
+                    <li class="card-company-name"><%=wishlist.offer.company.name%></li>
+                    <li class="card-company-city"><%=wishlist.offer.company.city%></li>
 
+                    <%= image_tag "#{rand(2)}.png", alt: "icône accessibilité", class: "icons" %>
+                    <%= image_tag "#{rand(2)}.png", alt: "icône accessibilité", class: "icons" %>
 
-                    <%= link_to "En savoir plus", "#", class: "btn-toward-show" %>
+                    <button class= "btn-toward-show" data-showid="show-card-<%=wishlist.offer.id%>"> "En savoir plus" </button>
                   </ul>
-                </div>
-              </div>
             </div>
-          <%end%>
+          </div>
+          <p class="card-info-date"><%=wishlist.offer.company.created_at.strftime("Ajoutée le %m/%d/%Y") %></p>
+        </div>
+        <% end %>
+
         </div>
         <div class ="details-offers" >
-          <img src="https://res.cloudinary.com/dqsotvcuw/image/upload/v1638790112/graphisme_rseee_srh6t7.png" alt="" class="w-100">
+          <h1>Futur show</h1>
+          <img src="https://res.cloudinary.com/dqsotvcuw/image/upload/v1638790112/graphisme_rseee_srh6t7.png" alt="" class="w-100 img-hidden">
+          <#%@wishlists.each do |offer| %>
+          <#div class="index-details d-none" id="show-card-<#%=wishlist.offer.id%>">
+              <#h2>.<#%=wishlist.offer.name%> <#/h2>
+          </#div>
+          <#% end %>
         </div>
       </div>
+    </div>
   </div>
 </div>
