@@ -7,14 +7,23 @@
   color:white;
 }
 
+.label-color-u {
+  color:black;
+}
+
 .form-align-u {
-  display: flex;
-  align-items:flex-end;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+.form-align {
+  display:flex;
+  align-items: flex-end;
   justify-content: space-between;
 }
 
-//.label-align {
-//   padding-left:10px;
-//   padding-right:10px;
-//   padding-bottom:20px;
-// }
+.shared_container{
+  justify-content: center;
+  background-color:#f4f4f4;
+  box-shadow: unset;
+}
