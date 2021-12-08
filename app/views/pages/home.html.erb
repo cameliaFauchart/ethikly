@@ -1,7 +1,7 @@
 <div class="banner-homepage">
-  <h5>Donnez du sens à votre vie! Choisissez un travail éthique!</h5>
+
   <div class="container-homepage">
-        
+  <h5>Trouvez un emploi qui corresponde à vos valeurs</h5>
         <%= form_tag offers_path, method: :get, class:"form-align" do %>
         <div class="label-align">
           <%= label_tag(:query,"Localisation du poste", class: "label-color") %>
@@ -23,7 +23,7 @@
           <%= submit_tag "Go👌", class: "buttonGo" %>
           <% end %>
     </div>
-    
+
     <div class ="hashtag-container">
       <ul class ="cloud">
         <li class ="cloud-list"><%= link_to "#environnemental", offers_path, class: "hashtags", class:"valeur", id:"environnemental", data: {weight: "4"} %></li>
