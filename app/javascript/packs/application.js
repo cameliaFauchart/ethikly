@@ -14,6 +14,19 @@ Turbolinks.start()
 ActiveStorage.start()
 
 
+//= require jquery
+//= require jquery.turbolinks
+//= require jquery_ujs
+//
+//
+//= require turbolinks
+
+
+
+
+
+
+
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
@@ -34,5 +47,6 @@ document.addEventListener('turbolinks:load', () => {
   setInterval(AddLetter, 100);
   // Call your functions here, e.g:
   // initSelect2();
+
       displayShow();
 });
