@@ -1,17 +1,20 @@
 const text = document.getElementById("js-text");
-const splitText = text.innerText.split(""); // séparer chaque caractère
+ // séparer chaque caractère
+const splitText = text ? text.innerText.split("") : "";
+if (text) {
 
-text.innerHTML = "";
+  text.innerHTML = "";
+}
 let sum = 0;
-setInterval //répète la méthode avec un délai fixé
-//entre chaque appel
 
 
 const AddLetter = () => {
-  console.log(sum);
-  if (sum < splitText.length) {
-    text.innerHTML += splitText[sum];
-    sum++;
+  if (text) {
+    console.log(sum);
+    if (sum < splitText.length) {
+      text.innerHTML += splitText[sum];
+      sum++;
+    }
   }
 }
 
