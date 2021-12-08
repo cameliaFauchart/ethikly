@@ -3,9 +3,18 @@ const showCards = document.querySelectorAll(".index-details")
 
 
 const displayHidePicture = () => {
-  picture.classList.add("d-none");
 
+  showCards.forEach((card) => {
+    if (!card.classList.contains('d-none')) {
+
+    }
+    picture.classList.add("d-none");
+
+});
 }
+
+
+
 
 
 const hideAll = () => {
