@@ -11,21 +11,19 @@ class OffersController < ApplicationController
           value = "%#{value}%"
         elsif column == "income"
           operator = ">"
-        else 
+        else
           operator = "="
         end
-        
         @query << "#{column} #{operator} '#{value}'"
       end
-      
     end
-  
+
     @offers = Offer.joins(:company).where(@query[0..-1].join(" AND "))
 
     else
       @offers = Offer.all
     end
-  end  
+  end
 
   def show
     @offer = Offer.find(params[:id])
