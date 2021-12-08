@@ -1,21 +1,23 @@
 <div class="container">
   <div class="myprofile">
-    <%= cl_image_tag current_user.photo.key, crop: :fill, class: "avatar-profile" %>
-    <%= simple_form_for(current_user, url: avatar_path, html: { method: :patch }) do |f| %>
-    <%= f.input :photo, as: :file %>
-    <%= f.button :submit, "Ajouter" %>
-    <% end %>
-      <div class="title-profile"><h2>Mes coordonnées</h2></div>
-      <div class="row">
-        <div class="card-profile-left col-12 col-lg-6">
-          <p><%= current_user.first_name %></p>
-          <p><%= current_user.last_name %></p>
-          <p><%= current_user.email %></p>
-        </div>
-        <div class="card-profile-right col-12 col-lg-6">
-          <img class="pdf-profile" src="https://edge.alluremedia.com.au/m/l/2017/06/Jeff-Bezos.jpg"/>
-        </div>
+    <div class="btn-avatar">
+      <%= cl_image_tag current_user.photo.key, width: 150, height: 150, crop: :fill, gravity: :auto, class: "avatar-profile" %>
+      <%= simple_form_for(current_user, url: avatar_path, html: { method: :patch }) do |f| %>
+      <%= f.input :photo, as: :file %>
+      <%= f.button :submit, "Ajouter" %>
+      <% end %>
+    </div>
+    <div class="title-profile"><h2>Mes coordonnées</h2></div>
+    <div class="row">
+      <div class="card-profile-left col-12 col-lg-6">
+        <p><%= current_user.first_name %></p>
+        <p><%= current_user.last_name %></p>
+        <p><%= current_user.email %></p>
       </div>
+      <div class="card-profile-right col-12 col-lg-6">
+        <img class="pdf-profile" src="https://edge.alluremedia.com.au/m/l/2017/06/Jeff-Bezos.jpg"/>
+      </div>
+    </div>
   </div>
   <div class="mywishlist">
     <div class="title-profile"><h2>Mes offres favorites</h2></div>
