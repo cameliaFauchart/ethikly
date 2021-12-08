@@ -4,16 +4,7 @@
 <%# verifier la presence d'une photo cloudinary
 si presente > l'afficher
 else > afficher photo venant des assets %>
-
-    <% if current_user.photo.key? %>
-      <%= cl_image_tag current_user.photo.key, width: 150, height: 150, crop: :fill, gravity: :auto, class: "avatar-profile" %>
-    <% else %>
-      <%= image_tag "wagon.jpg", alt:"logo", class: "avatar-profile" %>
-    <% end %>
-      <%= simple_form_for(current_user, url: avatar_path, html: { method: :patch }) do |f| %>
-      <%= f.input :photo, as: :file %>
-      <%= f.button :submit, "Ajouter" %>
-      <% end %>
+      <img class="avatar-profile" src="https://pyxis.nymag.com/v1/imgs/f6a/ac1/4f3e0d5bbb8ea02ce335cef6ac8c5be584-jeff-bezos.rsquare.w1200.jpg"/>
     </div>
     <div class="title-profile"><h2>Mes coordonnées</h2></div>
     <div class="row">
@@ -27,7 +18,7 @@ else > afficher photo venant des assets %>
       </div>
     </div>
   </div>
-  <div class="mywishlist">
+  <div class="      <%= cl_image_tag current_user.photo.key, width: 150, height: 150, crop: :fill, gravity: :auto, class: "avatar-profile" %>mywishlist">
     <div class="title-profile"><h2>Mes offres favorites</h2></div>
     <div class="d-flex">
       <div class= "cards-for-index">
