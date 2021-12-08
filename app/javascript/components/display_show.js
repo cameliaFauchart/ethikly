@@ -1,3 +1,25 @@
+const picture = document.querySelector(".img-hidden")
+const showCards = document.querySelectorAll(".index-details")
+
+
+const displayHidePicture = () => {
+  picture.classList.add("d-none");
+
+}
+
+
+const hideAll = () => {
+  showCards.forEach((card) => {
+    if (!card.classList.contains('d-none')) {
+      card.classList.add('d-none');
+    }
+  })
+}
+
+
+
+
+
 const displayShow = () => {
   console.log("Hello")
   const savoirPlus = document.querySelectorAll(".btn-toward-show")
@@ -5,16 +27,11 @@ const displayShow = () => {
     savoirPlus.forEach((btn) => {
       btn.addEventListener("click", (event) => {
         const cardId = event.currentTarget.dataset.showid
-        console.log(cardId)
         const targetShow = document.querySelector(`#${cardId}`)
-        console.log(targetShow)
-        targetShow.classList.toggle("d-none")
-        if (document.querySelector(".img-hidden")) {
-          const picture = document.querySelector(".img-hidden")
-          picture.style.visibility = "hidden";
+        hideAll(); // hide all cards
+        targetShow.classList.remove("d-none")
           // picture.classList.toggle("make-hide")
-          console.log(picture)
-        }
+        displayHidePicture();
 
       })
     })
