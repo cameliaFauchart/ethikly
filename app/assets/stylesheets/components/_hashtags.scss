@@ -3,13 +3,10 @@
   text-decoration: none;
   text-align: center;
 }
-a:hover {
-  text-decoration: none;
-}
 
 .hashtag-container {
   text-align: center;
-  padding-top: 40px;
+  padding-top: 25px;
 }
 
 ul.cloud {
@@ -30,7 +27,11 @@ color: #F2C00C;
   padding: 0.125rem 0.25rem;
   text-decoration: none;
   position: relative;
+}
 
+ul .valeur:hover {
+  text-decoration: none;
+  color: #905FB2;
 }
 
 .cloud-list a[data-weight="4"]
