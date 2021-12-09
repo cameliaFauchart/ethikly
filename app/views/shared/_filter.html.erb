@@ -22,17 +22,17 @@
       %>
     </div>
   </div>
-  <div class="row">
-    <div class= "form-group col">
+  <div class="row mx-auto">
+    <div class= "form-group col-md-2 mb-3">
       <%= label_tag(:searchIncome, "Income",class: "form-label", for: "searchIncome") %>
       <%= select_tag "search[income]", options_for_select(["", 25000, 30000], selected: (params[:search].nil? ? nil : params[:search]["income"])), class: "col-sm form-control search-input", id: "searchIncome" %>
     </div>
-    <div class= "form-group col">
+    <div class= "form-group col-md-2 mb-3">
       <%= label_tag(:searchContract,"Contract", class: "form-label",) %>
       <%= select_tag "search[contract]", options_for_select(["","CDI", "CDD", "Freelance", "Apprentissage"], selected: (params[:search].nil? ? nil : params[:search]["contract"])), class: "col-sm form-control search-input", id: "searchContract" %>
     </div>
     <div class= "form-group col pt-4">
-      <button class="btn btn-primary w-100" type="submit">Submit form</button>
+      <button class="btn btn-primary mb-2" type="submit">Submit form</button>
     </div>
   </div>
 
