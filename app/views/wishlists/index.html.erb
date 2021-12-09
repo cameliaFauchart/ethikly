@@ -1,20 +1,25 @@
 <div class="container">
   <div class="myprofile">
-    <div>
-<%# verifier la presence d'une photo cloudinary
-si presente > l'afficher
-else > afficher photo venant des assets %>
-      <img class="avatar-profile" src="https://pyxis.nymag.com/v1/imgs/f6a/ac1/4f3e0d5bbb8ea02ce335cef6ac8c5be584-jeff-bezos.rsquare.w1200.jpg"/>
+    <div class="myprofile-triple-div">
+      <div class="row">
+        <div class="card-profile-left col-12 col-lg-4">
+          <img class="avatar-profile" src="https://pyxis.nymag.com/v1/imgs/f6a/ac1/4f3e0d5bbb8ea02ce335cef6ac8c5be584-jeff-bezos.rsquare.w1200.jpg"/>
+        </div>
+        <div class="card-profile-center col-12 col-lg-4">
+          <p><%= current_user.first_name %></p>
+          <p><%= current_user.last_name %></p>
+          <p><%= current_user.email %></p>
+        </div>
+        <div class="card-profile-right col-12 col-lg-4">
+          <img class="pdf-profile" src="https://edge.alluremedia.com.au/m/l/2017/06/Jeff-Bezos.jpg"/>
+        </div>
+      </div>
     </div>
-    <div class="row">
-      <div class="card-profile-left col-12 col-lg-6">
-        <p><%= current_user.first_name %></p>
-        <p><%= current_user.last_name %></p>
-        <p><%= current_user.email %></p>
-      </div>
-      <div class="card-profile-right col-12 col-lg-6">
-        <img class="pdf-profile" src="https://edge.alluremedia.com.au/m/l/2017/06/Jeff-Bezos.jpg"/>
-      </div>
+    <div class="myprofile-charts">
+      <img class="charts-profile" src="https://cdn.extendoffice.com/images/stories/excel-charts/progress-circle-chart/doc-progress-circle-chart.png"/>
+      <img class="charts-profile" src="https://cdn.extendoffice.com/images/stories/excel-charts/progress-circle-chart/doc-progress-circle-chart.png"/>
+      <img class="charts-profile" src="https://cdn.extendoffice.com/images/stories/excel-charts/progress-circle-chart/doc-progress-circle-chart.png"/>
+      <img class="charts-profile" src="https://cdn.extendoffice.com/images/stories/excel-charts/progress-circle-chart/doc-progress-circle-chart.png"/>
     </div>
   </div>
   <div class="mywishlist">
