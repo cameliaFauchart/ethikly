@@ -2,29 +2,33 @@
 
   <div class= "card-show">
 
+    <div class="show-header">
+       <div class="d-flex justify-content-between">
 
-    <div class="d-flex justify-content-between">
 
-        <%= image_tag offer.company.logo_url, alt: "Logo de l'entreprise", class: "card-logo" %>
-        <div class="coeur-fav-show">
-          <% if current_user && current_user.already_in_list?(offer) %>
-            <%= link_to wishlist_path(current_user.get_wishlist(offer)), method: :delete, remote: true do %>
-                <i class="fas fa-heart"></i>
-          <% end %>
-          <% else %>
-            <%= link_to offer_wishlists_path(offer), method: :post, remote: true do %>
-                <i class="far fa-heart"></i>
-            <% end %>
-          <% end %>
-        </div>
-  </div>
-    <p><%= offer.name %></p>
-    <p><%= offer.company.name %></p>
-    <p><%= image_tag "#{rand(2)}.png", alt: "icône accessibilité", class: "icons" %>   <span><%= image_tag "#{rand(2)}.png", alt: "icône accessibilité", class: "icons" %></span> </p>
+            <%= image_tag offer.company.logo_url, alt: "Logo de l'entreprise", class: "card-logo" %>
+            <div class="coeur-fav-show">
+              <% if current_user && current_user.already_in_list?(offer) %>
+                <%= link_to wishlist_path(current_user.get_wishlist(offer)), method: :delete, remote: true do %>
+                    <i class="fas fa-heart"></i>
+              <% end %>
+              <% else %>
+                <%= link_to offer_wishlists_path(offer), method: :post, remote: true do %>
+                    <i class="far fa-heart"></i>
+                <% end %>
+              <% end %>
+            </div>
+      </div>
+        <p class="bold fontsize padding"><%= offer.name %></p>
+        <p class="bold padding"><%= offer.company.name %></p>
+        <p class="padding"><%= image_tag "#{rand(2)}.png", alt: "icône accessibilité", class: "icons" %>   <span><%= image_tag "#{rand(2)}.png", alt: "icône accessibilité", class: "icons" %></span> </p>
 
-    <p class="underline">Type de contrat : <%= offer.contract %> |<span class="underline"><%= offer.company.created_at.strftime("Ajoutée le %d/%m/%Y") %></span>
-    <p>Salaire : <%= offer.income %></p>
-    <p><%= offer.description %></p>
+        <p class="underline padding">Type de contrat : <%= offer.contract %> |<span class="underline"><%= offer.company.created_at.strftime("Ajoutée le %d/%m/%Y") %></span>
+        <p class="income padding">Salaire : <%= offer.income %></p>
+
+    </div>
+
+    <p class="show-description"><%= sanitize offer.description %></p>
 
   </div>
 </div>

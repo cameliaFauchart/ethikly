@@ -42,16 +42,17 @@ puts "Companies creation finished!"
 puts "Creating offers..."
 offer1 = Offer.new(name: "Community Manager", description: "Sous la responsabilité du Directeur Marketing, vous
                        serez en charge de l'animation des réseaux sociaux et du pilotage des campagnes de
-                       sponsorisation, au service de la valorisation des contenus et des comptes de nos clients.
-                       Compétences requises :
-                       * Créativité et excellente maîtrise de la rédaction appliquée au community management : recherche
+                       sponsorisation, au service de la valorisation des contenus et des <br> comptes de nos clients.
+                       <br> <br>
+                       <strong>Compétences requises</strong> : <br><br>
+                       <strong>*</strong> Créativité et excellente maîtrise de la rédaction appliquée au community management : recherche
                        d'angles créatifs, création d'accroches, rédaction de publications originales, décalées et
-                       engageantes ;
-                       * Excellente maîtrise des codes des réseaux sociaux, de leur animation et de l'environnement
+                       engageantes ; <br><br>
+                       <strong>*</strong> Excellente maîtrise des codes des réseaux sociaux, de leur animation et de l'environnement
                        social-médias et tout particulièrement des réseaux suivants : Facebook, Twitter, Instagram,
-                       LinkedIn ;
-                       * Capacité à définir et animer une stratégie digitale ;
-                       * Expérience en gestion de campagnes emarketing - la maîtrise du Business Manager Facebook est
+                       LinkedIn ; <br><br>
+                       <strong>*</strong> Capacité à définir et animer une stratégie digitale ; <br><br>
+                       <strong>*</strong> Expérience en gestion de campagnes emarketing - la maîtrise du Business Manager Facebook est
                        indispensable", income: 30_000, contract: "CDD")
 offer2 = Offer.new(name: "Community Manager", description: "Sous la responsabilité du Directeur Marketing, vous
                        serez en charge de l'animation des réseaux sociaux et du pilotage des campagnes de

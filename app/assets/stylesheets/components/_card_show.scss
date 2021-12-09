@@ -11,17 +11,45 @@
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-  background-image: linear-gradient(to bottom, rgba(243, 234, 248, 0.8), rgba(255, 255, 255, 0.8)),
-  url(reading.png);
-  background-size: cover;
-  background-position: center;
+  padding: 1em;
+}
+
+.show-header {
+  background-color: rgb(253, 242, 242);
+  border-radius: 8px;
+}
+
+.show-description {
+  margin-top: 1em;
+}
+
+.bold {
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: larger;
 
 }
 
+.income {
+  font-size: larger;
+}
+
+.fontsize {
+  font-size: larger;
+
+}
 
 .coeur-fav-show {
  align-self: flex-end;
- top: 0.5em;
+ position: relative;
+ bottom: 0.5em;
+ right: 0.5em;
+ font-size: larger;
+}
+
+.padding {
+  padding: 0.2em;
+  padding-left: 10px;
 }
 
 .underline {
