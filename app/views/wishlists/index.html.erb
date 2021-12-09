@@ -1,3 +1,6 @@
+<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-pie.min.js"></script>
+
 <div class="banner-top-purple"></div>
 <div class="container">
   <div class="myprofile">
@@ -17,12 +20,15 @@
       </div>
     </div>
     <div class="myprofile-charts">
-      <img class="charts-profile" src="https://cdn.extendoffice.com/images/stories/excel-charts/progress-circle-chart/doc-progress-circle-chart.png"/>
-      <img class="charts-profile" src="https://cdn.extendoffice.com/images/stories/excel-charts/progress-circle-chart/doc-progress-circle-chart.png"/>
-      <img class="charts-profile" src="https://cdn.extendoffice.com/images/stories/excel-charts/progress-circle-chart/doc-progress-circle-chart.png"/>
-      <img class="charts-profile" src="https://cdn.extendoffice.com/images/stories/excel-charts/progress-circle-chart/doc-progress-circle-chart.png"/>
+      <div id= "global-chart" data-eco-score=<%= current_user.get_global_stats[:eco_score]%> data-env-score=<%= current_user.get_global_stats[:env_score]%>
+       data-social-score=<%= current_user.get_global_stats[:social_score]%> data-number-of--wish=<%=current_user.get_global_stats[:nb_of_wishlist]%>></div>
+
     </div>
   </div>
+
+  <div>
+  <h1>Based on your liking</h1>
+    </div>
   <div class="mywishlist">
     <div class="title-profile"><h2>Offres favorites</h2></div>
       <div class= "cards-for-wishlist">

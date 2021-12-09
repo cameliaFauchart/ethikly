@@ -22,4 +22,12 @@ class User < ApplicationRecord
     Wishlist.find_by(user: self, offer: offer) #wishlist qui correspond à cet user précis et à cette offre précise
   end
 
+  def get_global_stats
+    env_score = wishlists.map {|wishlist| wishlist.offer.company.environmental_scoring}
+    eco_score = wishlists.map {|wishlist| wishlist.offer.company.eco_scoring}
+    social_score = wishlists.map {|wishlist| wishlist.offer.company.social_scoring}
+
+    {eco_score: eco_score.sum, env_score: env_score.sum, social_score: social_score.sum, nb_of_wishlist: social_score.size }
+  end
+
 end
