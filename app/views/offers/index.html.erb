@@ -45,9 +45,20 @@
                     "search[companies.city]" => params[:search]["companies.city"],
                     "search[offers.name]" => params[:search]["offers.name"],
                     "search[income]"=> params[:search]["income"],
-                    "search[contract]"=> params[:search]["contract"]
+                    "search[contract]"=> params[:search]["contract"],
+                    "search[companies.eco_scoring]"=> params[:search]["companies.eco_scoring"],
+                    "search[companies.environmental_scoring]" => params[:search]["companies.environmental_scoring"],
+                    "search[companies.social_scoring]" => params[:search]["companies.social_scoring"]
                     )
-                    .permit("search[companies.city]", "search[offers.name]","search[income]", "search[contract]"))), method: :delete, remote: true do %>
+                    .permit(
+                      "search[companies.city]",
+                      "search[offers.name]",
+                      "search[income]",
+                      "search[contract]",
+                      "search[companies.eco_scoring]",
+                      "search[companies.environmental_scoring]",
+                      "search[companies.social_scoring]"
+                      ))), method: :delete, remote: true do %>
                       <i class="fas fa-heart"></i>
                   <% end %>
 
@@ -56,9 +67,19 @@
                     "search[companies.city]" => params[:search]["companies.city"],
                     "search[offers.name]" => params[:search]["offers.name"],
                     "search[income]"=> params[:search]["income"],
-                    "search[contract]"=> params[:search]["contract"]
+                    "search[contract]"=> params[:search]["contract"],
+                    "search[companies.eco_scoring]"=> params[:search]["companies.eco_scoring"],
+                    "search[companies.environmental_scoring]" => params[:search]["companies.environmental_scoring"],
+                    "search[companies.social_scoring]" => params[:search]["companies.social_scoring"]
                     )
-                    .permit("search[companies.city]", "search[offers.name]","search[income]", "search[contract]"))), method: :post, remote: true do %>
+                    .permit(
+                      "search[companies.city]",
+                      "search[offers.name]",
+                      "search[income]",
+                      "search[contract]",
+                      "search[companies.eco_scoring]",
+                      "search[companies.environmental_scoring]",
+                      "search[companies.social_scoring]"))), method: :post, remote: true do %>
                       <i class="far fa-heart"></i>
                   <% end %>
                 <% end %>

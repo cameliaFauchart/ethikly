@@ -50,6 +50,6 @@ class WishlistsController < ApplicationController
     params.permit("wishlist_index")
   end
   def search_params
-    params[:search].permit("companies.city", "offers.name", "income", "contract")
+    params[:search].permit("companies.city", "offers.name", "income", "contract","companies.social_scoring","companies.environmental_scoring", "companies.eco_scoring")
   end
 end
