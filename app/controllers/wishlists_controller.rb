@@ -9,11 +9,11 @@ class WishlistsController < ApplicationController
     if params[:search]
       search_context = search_params
       if @wishlist.save
-        redirect_to offers_path(search: search_context, anchor: "coeur-anchor-#{@offer.id}") #redirection sur même page avec ancre
+        redirect_to offers_path(search: search_context) #redirection sur même page avec ancre
       end
     else
       if @wishlist.save
-        redirect_to offers_path(anchor: "coeur-anchor-#{@offer.id}")
+        redirect_to offers_path
       end
     end
   end
