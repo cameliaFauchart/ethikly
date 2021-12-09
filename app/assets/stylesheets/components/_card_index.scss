@@ -52,6 +52,8 @@ img.icons {
 
 .card-offer-name {
   font-weight: bold;
+  word-wrap: break-word;
+  width: 200px;
 }
 
 .card-company-name {
@@ -116,7 +118,7 @@ padding-bottom: 5px;
     padding-right: 15px;
     padding-left: 15px;
     border-radius: 4px;
-    position: absolute;
+    position: fixed;
     right: 20px;
     bottom: 10px;
     border-radius: 10px;

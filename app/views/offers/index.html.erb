@@ -14,11 +14,27 @@
             <!-- eco_scoring des seeds -->
             <% average = [offer.company.eco_scoring, offer.company.social_scoring, offer.company.environmental_scoring] %>
                   <% result = average.sum/average.size %>
+              <% color = case
+                  when result == 100
+                       "#017e47"
+                  when result <= 20
+                       "#b31611"
+                  when result <= 40
+                     "#f7e136"
+                  when result <= 60
+                     "orange"
+                  when result <= 80
+                     "#5fb76b"
+                end %>
+
+
 
             <%= image_tag offer.company.logo_url, alt: "Logo de l'entreprise", class: "card-logo" %>
             <!-- progress bar avec eco_scoring -->
+
+
             <div role="progressbar" aria-valuenow="<%= result %>" aria-valuemin="0"
-              aria-valuemax="100" style="--value:<%= result%>"></div>
+              aria-valuemax="100" style="--value:<%= result%>; --primary:<%=color%>"></div>
 
               <!-- méthodes create/delete sur coeurs -->
               <% if current_user %>
@@ -66,7 +82,6 @@
                 </div>
 
               </div>
-              <p class="card-info-date"><%= offer.company.created_at.strftime("Ajoutée le %m/%d/%Y") %></p>
             </div>
           <% end %>
       </div>
