@@ -6,9 +6,15 @@ class WishlistsController < ApplicationController
     @wishlist = Wishlist.new
     @wishlist.offer = @offer
     @wishlist.user = current_user
-    search_context = search_params
-    if @wishlist.save
-      redirect_to offers_path(search: search_context, anchor: "coeur-anchor-#{@offer.id}") #redirection sur même page avec ancre
+    if params[:search]
+      search_context = search_params
+      if @wishlist.save
+        redirect_to offers_path(search: search_context, anchor: "coeur-anchor-#{@offer.id}") #redirection sur même page avec ancre
+      end
+    else
+      if @wishlist.save
+        redirect_to offers_path(anchor: "coeur-anchor-#{@offer.id}")
+      end
     end
   end
 
@@ -16,8 +22,13 @@ class WishlistsController < ApplicationController
     @wishlist = Wishlist.find(params[:id])
     @offer = @wishlist.offer
     @wishlist.destroy
-    search_context = search_params
-    redirect_to offers_path(search: search_context, anchor: "coeur-anchor-#{@offer.id}") #redirection sur même page avec ancre
+    if params[:search]
+      search_context = search_params
+
+      redirect_to offers_path(search: search_context, anchor: "coeur-anchor-#{@offer.id}") #redirection sur même page avec ancre
+    else
+      redirect_to offers_path(anchor: "coeur-anchor-#{@offer.id}")
+    end
   end
 
   def index

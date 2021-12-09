@@ -3,6 +3,10 @@
   border-radius: 15px;
 }
 
+.input-criteria{
+ border: solid 2px #664da6;
+}
+
 .label-color {
   color:white;
 }
@@ -31,4 +35,13 @@
   justify-content: center;
   background-color:#f4f4f4;
   box-shadow: unset;
+}
+
+.search-bar-index{
+  background-color: #21094e;
+  margin-top: -50px;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+  margin: 0 auto;
 }

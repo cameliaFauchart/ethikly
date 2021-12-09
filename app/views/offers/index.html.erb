@@ -4,7 +4,7 @@
 
 
 <div class="container">
-  <h2>All The offers</h2>
+  
   <div class="d-flex">
     <div class= "cards-for-index">
     <% @offers.each do |offer| %>
@@ -74,7 +74,8 @@
 
 
       <div class ="details-offers" >
-        <img src="https://media.istockphoto.com/vectors/professional-stress-management-at-work-cartoon-vector-id1154046242" alt="" class="w-100 img-hidden">
+        <%= render :partial => 'svg/images' %>
+
         <% @offers.each do |offer| %>
         <div class="index-details d-none" id="show-card-<%=offer.id%>">
           <%= render "shared/offer_details", offer: offer  %>
