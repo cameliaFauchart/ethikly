@@ -1,7 +1,11 @@
 <div class= "container">
+
   <div class= "card-show">
-  <div class="d-flex justify-content-between">
-    <%= image_tag offer.company.logo_url, alt: "Logo de l'entreprise", class: "card-logo" %>
+
+
+    <div class="d-flex justify-content-between">
+
+        <%= image_tag offer.company.logo_url, alt: "Logo de l'entreprise", class: "card-logo" %>
         <div class="coeur-fav-show">
           <% if current_user && current_user.already_in_list?(offer) %>
             <%= link_to wishlist_path(current_user.get_wishlist(offer)), method: :delete, remote: true do %>
