@@ -1,7 +1,5 @@
 <div class= "container-index-search">
-  <div class= "form-align-u">
     <%= render "shared/filter" %>
-  </div>
 </div>
 
 
@@ -26,12 +24,25 @@
               <% if current_user %>
                 <div id="coeur-anchor-<%= offer.id%>" class="coeur-fav">
                 <% if current_user.already_in_list?(offer) %>
-                  <%= link_to wishlist_path(current_user.get_wishlist(offer)), method: :delete, remote: true do %>
+                  <%= link_to wishlist_path(current_user.get_wishlist(offer),
+                  (params[:search].nil? ? nil : params.merge(
+                    "search[companies.city]" => params[:search]["companies.city"],
+                    "search[offers.name]" => params[:search]["offers.name"],
+                    "search[income]"=> params[:search]["income"],
+                    "search[contract]"=> params[:search]["contract"]
+                    )
+                    .permit("search[companies.city]", "search[offers.name]","search[income]", "search[contract]"))), method: :delete do %>
                       <i class="fas fa-heart"></i>
                   <% end %>
 
                 <% else %>
-                  <%= link_to offer_wishlists_path(offer), method: :post, remote: true do %>
+                  <%= link_to offer_wishlists_path(offer, (params[:search].nil? ? nil : params.merge(
+                    "search[companies.city]" => params[:search]["companies.city"],
+                    "search[offers.name]" => params[:search]["offers.name"],
+                    "search[income]"=> params[:search]["income"],
+                    "search[contract]"=> params[:search]["contract"]
+                    )
+                    .permit("search[companies.city]", "search[offers.name]","search[income]", "search[contract]"))), method: :post do %>
                       <i class="far fa-heart"></i>
                   <% end %>
                 <% end %>
@@ -64,7 +75,6 @@
 
 
       <div class ="details-offers" >
-        <h1>Futur show</h1>
         <img src="https://media.istockphoto.com/vectors/professional-stress-management-at-work-cartoon-vector-id1154046242" alt="" class="w-100 img-hidden">
         <% @offers.each do |offer| %>
         <div class="index-details d-none" id="show-card-<%=offer.id%>">
