@@ -9,7 +9,7 @@ class OffersController < ApplicationController
         if column == "companies.city" || column == "offers.name"
           operator = "ILIKE"
           value = "%#{value}%"
-        elsif column == "income"
+        elsif column == "income" || column == "companies.eco_scoring" || column == "companies.social_scoring" || column == "companies.environmental_scoring"
           operator = ">"
         else
           operator = "="
