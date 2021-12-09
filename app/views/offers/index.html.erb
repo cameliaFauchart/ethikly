@@ -31,7 +31,7 @@
                     "search[income]"=> params[:search]["income"],
                     "search[contract]"=> params[:search]["contract"]
                     )
-                    .permit("search[companies.city]", "search[offers.name]","search[income]", "search[contract]"))), method: :delete do %>
+                    .permit("search[companies.city]", "search[offers.name]","search[income]", "search[contract]"))), method: :delete, remote: true do %>
                       <i class="fas fa-heart"></i>
                   <% end %>
 
@@ -42,7 +42,7 @@
                     "search[income]"=> params[:search]["income"],
                     "search[contract]"=> params[:search]["contract"]
                     )
-                    .permit("search[companies.city]", "search[offers.name]","search[income]", "search[contract]"))), method: :post do %>
+                    .permit("search[companies.city]", "search[offers.name]","search[income]", "search[contract]"))), method: :post, remote: true do %>
                       <i class="far fa-heart"></i>
                   <% end %>
                 <% end %>
