@@ -40,13 +40,13 @@ import "bootstrap";
 
 import { AddLetter } from "../components/animated_text";
 import { displayShow } from '../components/display_show';
-
+import { initChart } from '../components/chart_stats';
 
 
 document.addEventListener('turbolinks:load', () => {
   setInterval(AddLetter, 100);
   // Call your functions here, e.g:
   // initSelect2();
-
-      displayShow();
+    initChart();
+    displayShow();
 });
