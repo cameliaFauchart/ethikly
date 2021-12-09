@@ -126,12 +126,37 @@ padding-bottom: 5px;
 font-size: 1rem;
 text-align: center;
 color: #fff;
-text-shadow:
-0 0 7px #fff,
-0 0 10px #fff,
-0 0 42px rgb(230, 18, 124),
-0 0 77px rgb(230, 18, 124),
-0 0 100px rgb(230, 18, 124);
+// text-shadow:
+// 0 0 7px #fff,
+// 0 0 10px #fff,
+// 0 0 42px rgb(230, 18, 124),
+// 0 0 77px rgb(230, 18, 124),
+// 0 0 100px rgb(230, 18, 124);
+animation: lumiere 1s infinite linear;
+border-radius: 10px;
+}
+
+
+ .btn-toward-nassim-show {
+    background-color: rgba(99, 79, 161, 1);
+    color: white;
+    height: fit-content;
+    padding: 8px 15px;
+    margin-top: 15px;
+    border-radius: 4px;
+    border-radius: 10px;
+}
+
+.btn-toward-nassim-show:hover {
+font-size: 1rem;
+text-align: center;
+color: #fff;
+// text-shadow:
+// 0 0 7px #fff,
+// 0 0 10px #fff,
+// 0 0 42px rgb(230, 18, 124),
+// 0 0 77px rgb(230, 18, 124),
+// 0 0 100px rgb(230, 18, 124);
 animation: lumiere 1s infinite linear;
 border-radius: 10px;
 }
