@@ -3,7 +3,7 @@
 
 <div class="banner-top-purple"></div>
 <div class="container">
-  <div class="myprofile">
+  <div class="myprofile" id="profileIndex">
     <div class="myprofile-triple-div">
       <div class="row">
         <div class="card-profile-left col-12 col-lg-4">
@@ -29,7 +29,7 @@
   <div>
   <h1>Based on your liking</h1>
     </div>
-  <div class="mywishlist">
+  <div class="mywishlist" id="wishlistIndex">
     <div class="title-profile"><h2>Offres favorites</h2></div>
       <div class= "cards-for-wishlist">
         <%@wishlists.each do |wishlist|%>
@@ -46,7 +46,11 @@
                   aria-valuemax="100" style="--value:<%= result%>"></div>
 
                   <!-- méthodes create/delete sur coeurs -->
-
+                  <div class="coeur-fav-show">
+                      <%= link_to wishlist_path(wishlist, to: "wishlist_index"), method: :delete, remote: true do %>
+                          <i class="fas fa-heart"></i>
+                    <% end %>
+                  </div>
                   <!-- reste des informations de la carte -->
                   <ul>
                     <li class="card-offer-name"><%=wishlist.offer.name%></li>
