@@ -1,7 +1,7 @@
 
 <%= form_tag offers_path, as: :search, method: :get, class: "form-group gx-3 gy-2 align-items-center" do %>
   <div class="row search-bar-index d-flex justify-content-center">
-    <div class= "form-group col-4">
+    <div class= "form-group col-4" style="padding-top: 10px;padding-bottom: 5px;">
       <%= label_tag(:searchCity,"Localisation du poste", class: "form-label label-color") %>
         <%= text_field_tag "search[companies.city]",
         params[:searchCity],
@@ -12,7 +12,7 @@
         %>
     </div>
 
-    <div class= "form-group col-4">
+    <div class= "form-group col-4" style="padding-top: 10px;padding-bottom: 5px;">
       <%= label_tag(:searchName,"Le job de vos rêves",class: "form-label label-color") %>
       <%= text_field_tag "search[offers.name]",
         params[:searchName],
@@ -22,29 +22,31 @@
       %>
     </div>
   </div>
-  <div class="row mx-auto">
-    <div class= "form-group col-md-2 mb-3">
-      <%= label_tag(:searchIncome, "Salaire",class: "form-label", for: "searchIncome") %>
-      <%= select_tag "search[income]", options_for_select(["", 25000, 30000, 35000, 40000], selected: (params[:search].nil? ? nil : params[:search]["income"])), class: "col-sm form-control search-input", id: "searchIncome" %>
-    </div>
-    <div class= "form-group col-md-2 mb-3">
-      <%= label_tag(:searchContract,"Type de contrat", class: "form-label",) %>
-      <%= select_tag "search[contract]", options_for_select(["","CDI", "CDD", "Freelance", "Apprentissage"], selected: (params[:search].nil? ? nil : params[:search]["contract"])), class: "col-sm form-control search-input", id: "searchContract" %>
-    </div>
-    <div class= "form-group col-md-2 mb-3">
-      <%= label_tag(:searchEcoscore,"Score économie", class: "form-label",) %>
-      <%= select_tag "search[companies.eco_scoring]", options_for_select(["",20, 40, 60, 80, 100], selected: (params[:search].nil? ? nil : params[:search]["companies.eco_scoring"])), class: "col-sm form-control search-input", id: "searchEcoscore" %>
-    </div>
-    <div class= "form-group col-md-2 mb-3">
-      <%= label_tag(:searchEnvscore,"Score environnemental", class: "form-label",) %>
-      <%= select_tag "search[companies.environmental_scoring]", options_for_select(["",20, 40, 60, 80, 100], selected: (params[:search].nil? ? nil : params[:search]["companies.environmental_scoring"])), class: "col-sm form-control search-input", id: "searchEnvscore" %>
-    </div>
-    <div class= "form-group col-md-2 mb-3">
-      <%= label_tag(:searchSocialscore,"Score social", class: "form-label",) %>
-      <%= select_tag "search[companies.social_scoring]", options_for_select(["",20, 40, 60, 80, 100], selected: (params[:search].nil? ? nil : params[:search]["companies.social_scoring"])), class: "col-sm form-control search-input", id: "searchSocialscore" %>
-    </div>
-    <div class= "form-group col pt-4">
-      <button class="btn btn-primary mb-2" type="submit">Rechercher</button>
+  <div class="filter-banner">
+    <div class="all-filter d-flex">
+      <div class= "form-group col-md-2 mb-3">
+        <%= label_tag(:searchIncome, "Salaire",class: "form-label", for: "searchIncome") %>
+        <%= select_tag "search[income]", options_for_select(["", 25000, 30000, 35000, 40000], selected: (params[:search].nil? ? nil : params[:search]["income"])), class: "col-sm form-control search-input", id: "searchIncome" %>
+      </div>
+      <div class= "form-group col-md-2 mb-3">
+        <%= label_tag(:searchContract,"Type de contrat", class: "form-label",) %>
+        <%= select_tag "search[contract]", options_for_select(["","CDI", "CDD", "Freelance", "Apprentissage"], selected: (params[:search].nil? ? nil : params[:search]["contract"])), class: "col-sm form-control search-input", id: "searchContract" %>
+      </div>
+      <div class= "form-group col-md-2 mb-3">
+        <%= label_tag(:searchEcoscore,"Score économie", class: "form-label",) %>
+        <%= select_tag "search[companies.eco_scoring]", options_for_select(["",20, 40, 60, 80, 100], selected: (params[:search].nil? ? nil : params[:search]["companies.eco_scoring"])), class: "col-sm form-control search-input", id: "searchEcoscore" %>
+      </div>
+      <div class= "form-group col-md-2 mb-3">
+        <%= label_tag(:searchEnvscore,"Score environnemental", class: "form-label",) %>
+        <%= select_tag "search[companies.environmental_scoring]", options_for_select(["",20, 40, 60, 80, 100], selected: (params[:search].nil? ? nil : params[:search]["companies.environmental_scoring"])), class: "col-sm form-control search-input", id: "searchEnvscore" %>
+      </div>
+      <div class= "form-group col-md-2 mb-3">
+        <%= label_tag(:searchSocialscore,"Score social", class: "form-label",) %>
+        <%= select_tag "search[companies.social_scoring]", options_for_select(["",20, 40, 60, 80, 100], selected: (params[:search].nil? ? nil : params[:search]["companies.social_scoring"])), class: "col-sm form-control search-input", id: "searchSocialscore" %>
+      </div>
+      <div class= "form-group col d-flex justify-content-center align-items-center", style="margin-bottom: 0px">
+        <button class="btn-toward-nassim-show" type="submit">Rechercher</button>
+      </div>
     </div>
   </div>
 
