@@ -1,27 +1,35 @@
-<div class="label-align">
-    <%= form_tag offers_path, as: :search, method: :get do %>
-    <%= label_tag(:query,"Localisation du poste", class: "label-color-u") %>
-    <%= text_field_tag "search[companies.city]",
-    params[:query],
-    class: "form-control",
-    placeholder: "Où?"
-    %>
-</div>
 
-<div class="label-align">
-    <%= label_tag(:query,"Le job de vos rêves",class: "label-color-u") %>
+<%= form_tag offers_path, as: :search, method: :get, class: "form-row gx-3 gy-2 align-items-center" do %>
+  <div class= "form-group col">
+    <%= label_tag(:searchCity,"Localisation du poste", class: "form-label") %>
+      <%= text_field_tag "search[companies.city]",
+      params[:searchCity],
+      class: "form-control search-input",
+      placeholder: "Où?",
+      value: (params[:search].nil? ? nil : params[:search]["companies.city"]),
+      id:"searchCity"
+      %>
+  </div>
+
+  <div class= "form-group col">
+    <%= label_tag(:searchName,"Le job de vos rêves",class: "form-label") %>
     <%= text_field_tag "search[offers.name]",
-    params[:query],
-    class: "form-control",
-    placeholder: "Quoi?"
+      params[:searchName],
+      class: "form-control search-input",
+      placeholder: "Quoi?",
+      value:  (params[:search].nil? ? nil : params[:search]["offers.name"])
     %>
-</div>
-
-<div class="shared_container">
-  <%= select_tag "search[income]", options_for_select(["", 25000, 30000]) %>
-  <%= select_tag "search[contract]", options_for_select(["", "CDI", "CDD", "Freelance", "Apprentissage"]) %>
-
-  <%= submit_tag %>
-</div>
+  </div>
+  <div class= "form-group col">
+    <%= label_tag(:searchIncome, "Income",class: "form-label", for: "searchIncome") %>
+    <%= select_tag "search[income]", options_for_select(["", 25000, 30000], selected: (params[:search].nil? ? nil : params[:search]["income"])), class: "col-sm form-control search-input", id: "searchIncome" %>
+  </div>
+  <div class= "form-group col">
+    <%= label_tag(:searchContract,"Contract", class: "form-label",) %>
+    <%= select_tag "search[contract]", options_for_select(["","CDI", "CDD", "Freelance", "Apprentissage"], selected: (params[:search].nil? ? nil : params[:search]["contract"])), class: "col-sm form-control search-input", id: "searchContract" %>
+  </div>
+  <div class= "form-group col pt-4">
+    <button class="btn btn-primary w-100" type="submit">Submit form</button>
+  </div>
 
 <% end %>

@@ -34,7 +34,7 @@ const displayShow = () => {
 
 
   const savoirPlus = document.querySelectorAll(".btn-toward-show")
-  if (savoirPlus.length > 0) {
+  if (savoirPlus) {
     savoirPlus.forEach((btn) => {
       btn.addEventListener("click", (event) => {
         const cardId = event.currentTarget.dataset.showid
