@@ -4,30 +4,177 @@
 <div class="banner-top-purple"></div>
 <div class="container">
   <div class="myprofile" id="profileIndex">
-    <div class="myprofile-triple-div">
-      <div class="row" style="margin-top: 15px">
-        <div class="card-profile-left col-12 col-lg-4">
-          <img class="avatar-profile" src="https://pyxis.nymag.com/v1/imgs/f6a/ac1/4f3e0d5bbb8ea02ce335cef6ac8c5be584-jeff-bezos.rsquare.w1200.jpg"/>
-        </div>
-        <div class="card-profile-center col-12 col-lg-4">
-          <p><%= current_user.first_name %></p>
-          <p><%= current_user.last_name %></p>
+    <div class="myprofile-triple-div d-flex flex-column align-items-center mb-5">
+
+
+          <img class="avatar-profile mb-4" src="https://pyxis.nymag.com/v1/imgs/f6a/ac1/4f3e0d5bbb8ea02ce335cef6ac8c5be584-jeff-bezos.rsquare.w1200.jpg"/>
+
+
+          <h3><%= current_user.first_name %></h3>
+          <h3><%= current_user.last_name %></h3>
           <p><%= current_user.email %></p>
-        </div>
-        <div class="card-profile-right col-12 col-lg-4">
-          <img class="pdf-profile" src="https://edge.alluremedia.com.au/m/l/2017/06/Jeff-Bezos.jpg"/>
-        </div>
-      </div>
+
+
+
+
     </div>
-    <div class="myprofile-charts">
-      <div id= "global-chart" data-eco-score=<%= current_user.get_global_stats[:eco_score]%> data-env-score=<%= current_user.get_global_stats[:env_score]%>
-       data-social-score=<%= current_user.get_global_stats[:social_score]%> data-number-of--wish=<%=current_user.get_global_stats[:nb_of_wishlist]%>></div>
+
+
+    <div class="myprofile-charts d-flex justify-content-around">
+
+
+      <div class="d-flex flex-column align-items-center">
+        <div role="progressbar" aria-valuenow="<%= current_user.get_global_stats[:eco_score] / current_user.get_global_stats[:nb_of_wishlist] %>" aria-valuemin="0"
+              aria-valuemax="100" style="--value:<%= current_user.get_global_stats[:eco_score] / current_user.get_global_stats[:nb_of_wishlist] %>; width: 100px;">
+
+        </div>
+        <p>ECO SCORE</p>
+      </div>
+
+      <div class="d-flex flex-column align-items-center">
+        <div role="progressbar" aria-valuenow="<%= current_user.get_global_stats[:env_score] / current_user.get_global_stats[:nb_of_wishlist] %>" aria-valuemin="0"
+              aria-valuemax="100" style="--value:<%= current_user.get_global_stats[:env_score] / current_user.get_global_stats[:nb_of_wishlist] %>; width: 100px;">
+
+        </div>
+        <p>ENVIRONEMENT SCORE</p>
+      </div>
+
+
+
+      <div class="d-flex flex-column align-items-center">
+        <div role="progressbar" aria-valuenow="<%= current_user.get_global_stats[:social_score] / current_user.get_global_stats[:nb_of_wishlist] %>" aria-valuemin="0"
+              aria-valuemax="100" style="--value:<%= current_user.get_global_stats[:social_score] / current_user.get_global_stats[:nb_of_wishlist] %>; width: 100px;">
+
+        </div>
+        <p>SOCIAL SCORE</p>
+      </div>
+      <div class="d-none" id= "global-chart" data-eco-score=<%= current_user.get_global_stats[:eco_score]%> data-env-score=<%= current_user.get_global_stats[:env_score]%>
+       data-social-score=<%= current_user.get_global_stats[:social_score]%> data-number-of--wish=<%=current_user.get_global_stats[:nb_of_wishlist]%>>
+      </div>
+
+
+
+
+
 
     </div>
   </div>
 
   <div class="myprofile">
-    <h1>Based on your liking</h1>
+    <h1 class="text-center">Basé sur vos favoris</h1>
+
+
+
+
+
+  <% offers = @recomandation.sample(2) %>
+  <div class="d-flex flex-wrap justify-content-center">
+    <% offers.each do |offer| %>
+
+      <div class="card-index">
+        <div class="card-index-infos">
+          <div>
+                <!-- eco_scoring des seeds -->
+                <% average = [offer.company.eco_scoring, offer.company.social_scoring, offer.company.environmental_scoring] %>
+                    <% result = average.sum/average.size %>
+
+                <%= image_tag offer.company.logo_url, alt: "Logo de l'entreprise", class: "card-logo" %>
+                <!-- progress bar avec eco_scoring -->
+                <div role="progressbar" aria-valuenow="<%= result %>" aria-valuemin="0"
+                aria-valuemax="100" style="--value:<%= result%>; left: 18em;"></div>
+
+                <!-- méthodes create/delete sur coeurs -->
+                <div class="coeur-fav-show">
+                    <%= link_to offer_path(offer, to: "offer_index"), method: :delete, remote: true do %>
+                        <i class="fas fa-heart"></i>
+                  <% end %>
+                </div>
+                <!-- reste des informations de la carte -->
+                <ul>
+                  <li class="card-offer-name"><%=offer.name%></li>
+                  <li class="card-company-name"><%=offer.company.name%></li>
+                  <li class="card-company-city"><%=offer.company.city%></li>
+
+                  <%= image_tag "#{rand(2)}.png", alt: "icône accessibilité", class: "icons" %>
+                  <%= image_tag "#{rand(2)}.png", alt: "icône accessibilité", class: "icons" %>
+
+                  <%= link_to "En savoir plus", offer_path(offer), class: "btn-toward-show" %>
+
+
+                </ul>
+          </div>
+        </div>
+        <p class="card-info-date"><%=offer.company.created_at.strftime("Ajoutée le %m/%d/%Y") %></p>
+      </div>
+    <% end %>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </div>
 
   <div class="mywishlist" id="wishlistIndex">
@@ -44,7 +191,7 @@
                   <%= image_tag wishlist.offer.company.logo_url, alt: "Logo de l'entreprise", class: "card-logo" %>
                   <!-- progress bar avec eco_scoring -->
                   <div role="progressbar" aria-valuenow="<%= result %>" aria-valuemin="0"
-                  aria-valuemax="100" style="--value:<%= result%>"></div>
+                  aria-valuemax="100" style="--value:<%= result%>; left: 18em;"></div>
 
                   <!-- méthodes create/delete sur coeurs -->
                   <div class="coeur-fav-show">
