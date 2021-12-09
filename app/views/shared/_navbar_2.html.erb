@@ -18,8 +18,8 @@
         <li class="nav-item dropdown">
           <%= image_tag "https://pyxis.nymag.com/v1/imgs/f6a/ac1/4f3e0d5bbb8ea02ce335cef6ac8c5be584-jeff-bezos.rsquare.w1200.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Mon profil", wishlists_path, class: "dropdown-item" %>
-            <%= link_to "Ma liste d'offres favorites", wishlists_path, class: "dropdown-item" %>
+            <%= link_to "Mon profil", wishlists_path(anchor: "profileIndex"), class: "dropdown-item" %>
+            <%= link_to "Ma liste d'offres favorites", wishlists_path(anchor: "wishlistIndex"), class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
