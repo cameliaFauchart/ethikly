@@ -7,7 +7,7 @@
     <div class="myprofile-triple-div d-flex flex-column align-items-center mb-5">
 
 
-          <img class="avatar-profile mb-4" src="https://pyxis.nymag.com/v1/imgs/f6a/ac1/4f3e0d5bbb8ea02ce335cef6ac8c5be584-jeff-bezos.rsquare.w1200.jpg"/>
+          <img class="avatar-profile mb-4" src="https://live.staticflickr.com/65535/51736659575_b825dc7f45_n.jpg" alt="Photo de Dimitri Bartone"/>
 
 
           <h3><%= current_user.first_name %></h3>
@@ -36,7 +36,7 @@
               aria-valuemax="100" style="--value:<%= current_user.get_global_stats[:env_score] / current_user.get_global_stats[:nb_of_wishlist] %>; width: 100px;">
 
         </div>
-        <p>ENVIRONEMENT SCORE</p>
+        <p>SCORE ENVIRONNEMENTAL</p>
       </div>
 
 
@@ -46,7 +46,7 @@
               aria-valuemax="100" style="--value:<%= current_user.get_global_stats[:social_score] / current_user.get_global_stats[:nb_of_wishlist] %>; width: 100px;">
 
         </div>
-        <p>SOCIAL SCORE</p>
+        <p>SCORE SOCIAL</p>
       </div>
       <div class="d-none" id= "global-chart" data-eco-score=<%= current_user.get_global_stats[:eco_score]%> data-env-score=<%= current_user.get_global_stats[:env_score]%>
        data-social-score=<%= current_user.get_global_stats[:social_score]%> data-number-of--wish=<%=current_user.get_global_stats[:nb_of_wishlist]%>>
