@@ -46,7 +46,7 @@ company10 = Company.create!(name: "Electricité de France", city: "Paris", addre
                             eco_scoring: 60, social_scoring: 55, environmental_scoring: 40, logo_url: "edf.png",
                             accessibility: true, safe_space: false, remote: true)
 company11 = Company.create!(name: "Airbus", city: "Blagnac", address: "1,rond point Maurice Bellonte", eco_scoring: 10,
-                            social_scoring: 23, environmental_scoring: 7, logo_url: "airbus.jpeg", accessibility: true,
+                            social_scoring: 23, environmental_scoring: 7, logo_url: "airbus.jpg", accessibility: true,
                             safe_space: false, remote: true)
 company12 = Company.create!(name: "Renault sas", city: "Boulogne-Billancourt", address: "13 Quai Alphonse le Gallo",
                             eco_scoring: 50, social_scoring: 65, environmental_scoring: 68, logo_url: "renault.png",
