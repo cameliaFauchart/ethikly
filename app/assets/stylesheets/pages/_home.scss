@@ -1,1 +1,30 @@
 // Specific CSS for your home-page
+.custom-shape-divider-top-1639074643 {
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1639074643 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 113px;
+}
+
+.custom-shape-divider-top-1639074643 .shape-fill {
+    fill: #21094E;
+}
+.homepage-bottom {
+  background-color: white;
+}
+
+.homepage-infos {
+  width: 200px;
+  p {
+
+  }
+}
