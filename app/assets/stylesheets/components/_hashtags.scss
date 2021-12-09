@@ -3,17 +3,15 @@
   text-decoration: none;
   text-align: center;
 }
-a:hover {
-  text-decoration: none;
-}
 
 .hashtag-container {
   text-align: center;
-  padding-top: 40px;
+  padding-top: 25px;
 }
 
 ul.cloud {
-  padding-top: 60px;
+  margin-bottom: 30px;
+  font-size: 23px;
   list-style: none;
   padding-left: 0;
   display: flex;
@@ -23,18 +21,24 @@ ul.cloud {
   line-height: 2.5rem;
 }
 
+
+
 ul .valeur {
-color: #F2C00C;
+  color: #F2C00C;
   display: block;
   font-size: 1.5rem;
   padding: 0.125rem 0.25rem;
   text-decoration: none;
   position: relative;
-
 }
 
-.cloud-list a[data-weight="4"]
- {--size: 4; }
+ul .valeur:hover {
+  text-decoration: none;
+  color: #905FB2;
+}
+
+.cloud-list a[data-weight="2"]
+ {--size: 2; }
 
  .cloud-list a[data-weight="2"]
  {--size: 2; }
@@ -70,9 +74,4 @@ color: #F2C00C;
 .cloud-list a {
   opacity: calc((15 - (9 - var(--size))) / 15); // pour gérer l'opacité
   /* ... */
-}
-
-
-.valeur:hover {
-   color:#035ac1;
 }

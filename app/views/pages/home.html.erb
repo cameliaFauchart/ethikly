@@ -1,7 +1,7 @@
 <div class="banner-homepage">
 
   <div class="container-homepage">
-  <h5>Trouvez un emploi qui corresponde à vos valeurs</h5>
+  <h5>Trouvez un emploi qui correspond à vos valeurs</h5>
         <%= form_tag offers_path, method: :get, class:"form-align" do %>
         <div class="label-align">
           <%= label_tag(:query,"Localisation du poste", class: "label-color") %>
@@ -19,19 +19,19 @@
           placeholder: "Quoi?"
           %>
         </div>
-        <div class ="buttonGO">
-          <%= submit_tag "Go👌", class: "buttonGo" %>
+        <div class="buttonGO">
+          <%= image_submit_tag("ethikly_hand.png") %>
           <% end %>
-    </div>
+        </div>
 
     <div class ="hashtag-container">
       <ul class ="cloud">
         <li class ="cloud-list"><%= link_to "#environnemental", offers_path, class: "hashtags", class:"valeur", id:"environnemental", data: {weight: "4"} %></li>
-        <li class ="cloud-list"><%= link_to "#economique", offers_path, class: "hashtags", class:"valeur", id:"economique", data: {weight: "2"} %></li>
+        <li class ="cloud-list"><%= link_to "#économique", offers_path, class: "hashtags", class:"valeur", id:"economique", data: {weight: "2"} %></li>
         <li class ="cloud-list"><%= link_to "#social", offers_path, class: "hashtags", class:"valeur", id:"social", data: {weight: "5"} %></li>
-        <li class ="cloud-list"><%= link_to "#viable", offers_path, class: "hashtags", class:"valeur", id:"viable", data: {weight: "8"} %></li>
+        <!--<li class ="cloud-list"><%= link_to "#viable", offers_path, class: "hashtags", class:"valeur", id:"viable", data: {weight: "8"} %></li>-->
         <li class ="cloud-list"><%= link_to "#ecolo", offers_path, class: "hashtags", class:"valeur", id:"ecolo", data: {weight: "6"} %></li>
-        <li class ="cloud-list"><%= link_to "#equitable", offers_path, class: "hashtags", class:"valeur", id:"equitable", data: {weight: "4"} %></li>
+        <li class ="cloud-list"><%= link_to "#équitable", offers_path, class: "hashtags", class:"valeur", id:"equitable", data: {weight: "4"} %></li>
         <li class ="cloud-list"><%= link_to "#diversité", offers_path, class: "hashtags", class:"valeur", id:"diversité", data: {weight: "5"} %></li>
         <li class ="cloud-list"><%= link_to "#parité", offers_path, class: "hashtags", class:"valeur", id:"parité", data: {weight: "9"} %></li>
         <li class ="cloud-list"><%= link_to "#inclusion", offers_path, class: "hashtags", class:"valeur", id:"inclusion", data: {weight: "7"} %></li>
