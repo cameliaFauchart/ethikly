@@ -75,7 +75,8 @@
 
 
       <div class ="details-offers" >
-        <img src="https://media.istockphoto.com/vectors/professional-stress-management-at-work-cartoon-vector-id1154046242" alt="" class="w-100 img-hidden">
+        <%= render :partial => 'svg/images' %>
+
         <% @offers.each do |offer| %>
         <div class="index-details d-none" id="show-card-<%=offer.id%>">
           <%= render "shared/offer_details", offer: offer  %>
