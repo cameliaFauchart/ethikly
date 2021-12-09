@@ -27,7 +27,7 @@
 const displayShow = () => {
    // ------------------- A SUPRIMER CONST ALREADY DEFINE ^ TOP OF THE FILE ---------------------------
 
-  const picture = document.querySelector("#freepik_stories-resume")
+  const picture = document.querySelector("#svgHide")
   const showCards = document.querySelectorAll(".index-details")
 
  // -------------------  ---------------------------
