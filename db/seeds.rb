@@ -14,21 +14,29 @@ User.destroy_all
 
 puts "Creating companies..."
 company1 = Company.create!(name: "OVH", city: "Roubaix", address: "2 Rue Kellermann", eco_scoring: 15,
-                           social_scoring: 20, environmental_scoring: 19, logo_url:"OVH.png")
+                           social_scoring: 20, environmental_scoring: 19, logo_url:"OVH.png", accessibility: false,
+                           safe_space: false, remote: true)
 company2 = Company.create!(name: "Le Wagon", city: "Lille", address: "2 Av. des Saules", eco_scoring: 87,
-                           social_scoring: 95, environmental_scoring: 85, logo_url: "wagon.png")
+                           social_scoring: 95, environmental_scoring: 85, logo_url: "wagon.png", accessibility: true,
+                          safe_space: true, remote: true)
 company3 = Company.create!(name: "Leroy Merlin", city: "Lezennes", address: "Rue Chanzy", eco_scoring: 36,
-                           social_scoring: 38, environmental_scoring: 33, logo_url: "leroymerlin.png")
+                           social_scoring: 38, environmental_scoring: 33, logo_url: "leroymerlin.png", accessibility: true,
+                            safe_space: false, remote: true)
 company4 = Company.create!(name: "Decathlon", city: "Villeneuve-d'Ascq", address: "121 Bd de Valmy", eco_scoring: 18,
-                           social_scoring: 19, environmental_scoring: 11, logo_url: "decathlon.png")
+                           social_scoring: 19, environmental_scoring: 11, logo_url: "decathlon.png", accessibility: true,
+                            safe_space: true, remote: true)
 company5 = Company.create!(name: "M6 Web", city: "La Madeleine", address: "125 Av de la République", eco_scoring: 77,
-                           social_scoring: 72, environmental_scoring: 71, logo_url: "logo_m6.png")
+                           social_scoring: 72, environmental_scoring: 71, logo_url: "logo_m6.png", accessibility: true,
+                          safe_space: true, remote: true)
 company6 = Company.create!(name: "La Redoute", city: "Roubaix", address: "110 Rue de Blanchemaille", eco_scoring: 55,
-                           social_scoring: 60, environmental_scoring: 52, logo_url: "laredoute.jpg")
+                           social_scoring: 60, environmental_scoring: 52, logo_url: "laredoute.jpg", accessibility: true,
+                           safe_space: true, remote: true)
 company7 = Company.create!(name: "Les Mains Dans Le Guidon", city: "Lille", address: "49 rue Bourignon", eco_scoring: 97,
-                           social_scoring: 89, environmental_scoring: 94, logo_url: "les_mains.png")
+                           social_scoring: 89, environmental_scoring: 94, logo_url: "les_mains.png", accessibility: true,
+                            safe_space: true, remote: true)
 company8 = Company.create!(name: "Bio C' Bon", city: "Lille", address: "45 rue Colbert", eco_scoring: 80,
-                           social_scoring: 69, environmental_scoring: 72, logo_url: "bio_c_bon.png")
+                           social_scoring: 69, environmental_scoring: 72, logo_url: "bio_c_bon.png", accessibility: true,
+                          safe_space: true, remote: true)
 p company1
 p company2
 p company3
