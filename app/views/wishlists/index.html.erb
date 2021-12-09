@@ -6,8 +6,6 @@ si presente > l'afficher
 else > afficher photo venant des assets %>
       <img class="avatar-profile" src="https://pyxis.nymag.com/v1/imgs/f6a/ac1/4f3e0d5bbb8ea02ce335cef6ac8c5be584-jeff-bezos.rsquare.w1200.jpg"/>
     </div>
-
-    <div class="title-profile"><h2>Mes coordonnées</h2></div>
     <div class="row">
       <div class="card-profile-left col-12 col-lg-6">
         <p><%= current_user.first_name %></p>
@@ -20,9 +18,8 @@ else > afficher photo venant des assets %>
     </div>
   </div>
   <div class="mywishlist">
-    <div class="title-profile"><h2>Mes offres favorites</h2></div>
-    <div class="d-flex">
-      <div class= "cards-for-index">
+    <div class="title-profile"><h2>Offres favorites</h2></div>
+      <div class= "cards-for-wishlist">
         <%@wishlists.each do |wishlist|%>
         <div class="card-index">
           <div class="card-index-infos">
@@ -38,7 +35,6 @@ else > afficher photo venant des assets %>
 
                   <!-- méthodes create/delete sur coeurs -->
 
-
                   <!-- reste des informations de la carte -->
                   <ul>
                     <li class="card-offer-name"><%=wishlist.offer.name%></li>
@@ -48,7 +44,7 @@ else > afficher photo venant des assets %>
                     <%= image_tag "#{rand(2)}.png", alt: "icône accessibilité", class: "icons" %>
                     <%= image_tag "#{rand(2)}.png", alt: "icône accessibilité", class: "icons" %>
 
-                    <button class= "btn-toward-show" data-showid="show-card-<%=wishlist.offer.id%>"> "En savoir plus" </button>
+                    <button class= "btn-toward-show" data-showid="show-card-<%=wishlist.offer.id%>">En savoir plus</button>
                   </ul>
             </div>
           </div>
@@ -57,16 +53,7 @@ else > afficher photo venant des assets %>
         <% end %>
 
         </div>
-        <div class ="details-offers" >
-          <h1>Futur show</h1>
-          <img src="https://res.cloudinary.com/dqsotvcuw/image/upload/v1638790112/graphisme_rseee_srh6t7.png" alt="" class="w-100 img-hidden">
-          <#%@wishlists.each do |offer| %>
-          <#div class="index-details d-none" id="show-card-<#%=wishlist.offer.id%>">
-              <#h2>.<#%=wishlist.offer.name%> <#/h2>
-          </#div>
-          <#% end %>
-        </div>
+
       </div>
-    </div>
   </div>
 </div>
