@@ -22,4 +22,8 @@ class User < ApplicationRecord
     Wishlist.find_by(user: self, offer: offer) #wishlist qui correspond à cet user précis et à cette offre précise
   end
 
+  def get_global_stats
+
+  end
+
 end
