@@ -21,6 +21,7 @@
   border-top-width: 30px;
   position: relative;
   border-bottom-width: 35px;
+  margin-bottom: 35px;
 }
 
 .avatar-profile{
@@ -53,6 +54,8 @@
   text-align: center;
 }
 
-.details-offers {
-  margin: 2em;
+.cards-for-wishlist {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
 }
