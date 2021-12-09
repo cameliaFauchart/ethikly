@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker'
+
 puts "Cleaning database..."
 Wishlist.destroy_all
 Offer.destroy_all
@@ -37,6 +39,28 @@ company7 = Company.create!(name: "Les Mains Dans Le Guidon", city: "Lille", addr
 company8 = Company.create!(name: "Bio C' Bon", city: "Lille", address: "45 rue Colbert", eco_scoring: 80,
                            social_scoring: 69, environmental_scoring: 72, logo_url: "bio_c_bon.png", accessibility: true,
                           safe_space: true, remote: true)
+company9 = Company.create!(name: "Psa Automobiles Sa", city: "Poissy", address: "2 Boulevard de l'europe", eco_scoring: 25,
+                           social_scoring: 35, environmental_scoring: 20, logo_url: "psa.png", accessibility: true,
+                          safe_space: false, remote: true)
+company10 = Company.create!(name: "Electricité de France", city: "Paris", address: "222-30 Avenue de Wagram", eco_scoring: 60,
+                           social_scoring: 55, environmental_scoring: 40, logo_url: "edf.png", accessibility: true,
+                          safe_space: false, remote: true)
+company11 = Company.create!(name: "Airbus", city: "Blagnac", address: "1,rond point Maurice Bellonte", eco_scoring: 10,
+                           social_scoring: 23, environmental_scoring: 7, logo_url: "airbus.jpeg", accessibility: true,
+                          safe_space: false, remote: true)
+company12 = Company.create!(name: "Renault sas", city: "Boulogne-Billancourt", address: "13 Quai Alphonse le Gallo", eco_scoring: 50,
+                           social_scoring: 65, environmental_scoring: 68, logo_url: "renault.png", accessibility: true,
+                          safe_space: true, remote: true)
+company13 = Company.create!(name: "Orange", city: "Issy-les-Moulineaux", address: "111 quai du Président Roosevelt", eco_scoring: 30,
+                           social_scoring: 5, environmental_scoring: 43, logo_url: "orange.png", accessibility: true,
+                          safe_space: false, remote: true)
+
+
+
+
+
+
+
 p company1
 p company2
 p company3
@@ -45,6 +69,11 @@ p company5
 p company6
 p company7
 p company8
+p company9
+p company10
+p company11
+p company12
+p company13
 puts "Companies creation finished!"
 
 puts "Creating offers..."
@@ -231,3 +260,22 @@ p user2
 p user3
 p user4
 puts "Users creation finished!"
+
+wages = [ 30000, 35000, 40000, 45000]
+contract_type = ["CDI", "CDD", "Apprentissage", "Freelance"]
+companies = [company1, company2, company3, company4, company5, company6, company7,
+             company8, company9, company10, company11, company12, company13]
+
+puts 'Creating 100 fake offers'
+100.times do
+  offer = Offer.new(
+    name: Faker::Job.title,
+    description: Faker::Lorem.paragraph(sentence_count: 3, supplemental: true, random_sentences_to_add: 6),
+    income: wages.sample,
+    contract: contract_type.sample,
+  )
+  offer.company = companies.sample
+   offer.save!
+end
+
+puts "New Offers creations finished!"
